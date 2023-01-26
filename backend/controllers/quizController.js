@@ -5,6 +5,7 @@ const Quiz = require("../models/quizModel");
 const { ErrorResponse } = require("../middleware/errorMiddleware");
 
 const { schema } = require("../util/quizValidationSchema");
+const shuffleArray = require("../util/shuffleArray");
 const { PAGINATION_LIMIT } = require("../constants/policies");
 
 const createQuiz = asyncHandler(async (req, res, next) => {
@@ -139,4 +140,47 @@ const deleteQuiz = asyncHandler(async (req, res, next) => {
   });
 });
 
-module.exports = { createQuiz, getQuizzes, getQuiz, editQuiz, deleteQuiz };
+const getQuizQuestions = asyncHandler(async (req, res, next) => {
+  const { id } = req.params;
+  let quiz;
+
+  try {
+    quiz = await Quiz.findOne({ _id: id, published: true });
+  } catch (error) {
+    // for invalid mongodb objectid
+    throw new ErrorResponse("Quiz not found", StatusCodes.NOT_FOUND);
+  }
+
+  if (!quiz) {
+    throw new ErrorResponse("Quiz not found", StatusCodes.NOT_FOUND);
+  }
+
+  const q = quiz.toJSON();
+
+  const fullMarks = q.questions.reduce((acc, q) => acc + q.weightage, 0);
+
+  // remove correctOptionId from questions and shuffling Options
+  q.questions = q.questions.map((question) => {
+    if (question.shuffleOptions) {
+      question.options = shuffleArray(question.options);
+      delete question.correctOptionId;
+    }
+    return question;
+  });
+
+  // shuffle questions
+  if (q.shuffleQuestions) q.questions = shuffleArray(q.questions);
+
+  const response = { ...q, fullMarks };
+
+  res.status(StatusCodes.OK).json(response);
+});
+
+module.exports = {
+  createQuiz,
+  getQuizzes,
+  getQuiz,
+  editQuiz,
+  deleteQuiz,
+  getQuizQuestions,
+};

@@ -7,6 +7,7 @@ const {
   getQuiz,
   editQuiz,
   deleteQuiz,
+  getQuizQuestions,
 } = require("../../controllers/quizController.js");
 const { protect } = require("../../middleware/authMiddleware");
 
@@ -15,5 +16,6 @@ router.get("/", protect, getQuizzes);
 router.get("/:id", protect, getQuiz);
 router.put("/:id", protect, editQuiz);
 router.delete("/:id", protect, deleteQuiz);
+router.get("/:id/questions", protect, getQuizQuestions);
 
 module.exports = router;
