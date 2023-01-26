@@ -1,0 +1,69 @@
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYWZlNjljMDczZDgzODMyZjhhMTJmNSIsImlhdCI6MTY3NDQ4MjM0OCwiZXhwIjoxNjc3MDc0MzQ4fQ.NRflA4hR65GxDFyi0Io3gI-wplx4Pue-0BDF1zKW-NU
+
+POST http://localhost:3001/api/v1/quiz
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "title":"this is a quiz title",
+  "description": "this is a quiz description",
+  "tags": ["1","2","34","5"],
+  "shuffleQuestions": false,
+  "duration": 1000,
+  "published": false,
+  "questions": [
+    {
+      "id": "a1",
+      "description": "this is the first question",
+      "weightage": 5,
+      "imageUrl": "http://abc.def",
+      "noOfOptionsDisplayed": 4,
+      "shuffleOptions": false,
+      "correctOptionId": "1",
+      "options": [
+        {
+          "id": "1",
+          "description": "this is the first option for a1",
+          "imageUrl": "http://abc.def"
+        },
+        {
+          "id": "2",
+          "description": "this is the second option for a1",
+          "imageUrl": "http://abc.def"
+        },
+        {
+          "id": "3",
+          "description": "this is the third option for a1",
+          "imageUrl": "http://abc.def"
+        }
+      ]
+    },
+    {
+      "id": "a2",
+      "description": "this is the second question",
+      "weightage": 5,
+      "imageUrl": "http://abc.def",
+      "noOfOptionsDisplayed": 3,
+      "shuffleOptions": false,
+      "correctOptionId": "2",
+      "options": [
+        {
+          "id": "1",
+          "description": "this is the first option for a2",
+          "imageUrl": "http://abc.def"
+        },
+        {
+          "id": "2",
+          "description": "this is the second option for a2",
+          "imageUrl": "http://abc.def"
+        },
+        {
+          "id": "3",
+          "description": "this is the third option for a2",
+          "imageUrl": "http://abc.def"
+        }
+      ]
+    }
+  ]
+}
+

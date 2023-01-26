@@ -1,0 +1,2171 @@
+{
+	"info": {
+		"_postman_id": "da6424f3-647d-4a42-b0e8-e4106e223148",
+		"name": "Quiz",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"var schema = {\r",
+									"    \"type\": \"object\",\r",
+									"    \"properties\": {\r",
+									"        \"id\": { \"type\": \"string\" },\r",
+									"        \"firstName\": { \"type\": \"string\" },\r",
+									"        \"lastName\": { \"type\": \"string\" },\r",
+									"        \"email\": { \"type\": \"string\" },\r",
+									"        \"token\": { \"type\": \"string\" }\r",
+									"    },\r",
+									"    \"required\": [\"id\", \"firstName\", \"lastName\", \"email\", \"token\"]\r",
+									"};\r",
+									"\r",
+									"pm.test('Schema is valid', function () {\r",
+									"    pm.response.to.have.jsonSchema(schema);\r",
+									"});\r",
+									"\r",
+									"var jsonData = pm.response.json();\r",
+									"pm.collectionVariables.set(\"token\", jsonData.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"lorem\",\r\n  \"lastName\": \"ipsum\",\r\n  \"email\": \"loremipsum@mail.com\",\r\n  \"password\": \"loremipsumpassword\"\r\n}"
+						},
+						"url": {
+							"raw": "{{auth_url}}/register",
+							"host": [
+								"{{auth_url}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"john\",\r\n  \"lastName\": \"doe\",\r\n  \"email\": \"johndoe@mail.com\",\r\n  \"password\": \"johndoepassword\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{auth_url}}/register",
+									"host": [
+										"{{auth_url}}"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "false"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "0"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "136"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "278"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"116-4wsmt4Z4boBJJNImHqYYyN/qTBM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 31 Dec 2022 07:37:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"63afe69c073d83832f8a12f5\",\n    \"firstName\": \"john\",\n    \"lastName\": \"doe\",\n    \"email\": \"johndoe@mail.com\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYWZlNjljMDczZDgzODMyZjhhMTJmNSIsImlhdCI6MTY3MjQ3MjIyMCwiZXhwIjoxNjc1MDY0MjIwfQ.TAhcsMzij6wm9lqYx2crzvqmWKsu2XRCsIPL4Clh_y8\"\n}"
+						},
+						{
+							"name": "Email already exists",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"john\",\r\n  \"lastName\": \"doe\",\r\n  \"email\": \"johndoe@mail.com\",\r\n  \"password\": \"johndoepassword\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{auth_url}}/register",
+									"host": [
+										"{{auth_url}}"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "false"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "0"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "99"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "285"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11d-+Q31Wm7EntJvlSLQUSUCur2xHQo\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 31 Dec 2022 07:37:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"message\": \"User already exists\",\n        \"stack\": \"Error: User already exists\\n    at D:\\\\webprojects\\\\quiz\\\\server\\\\controllers\\\\userController.js:48:11\\n    at runMicrotasks (<anonymous>)\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\",\n        \"type\": 0,\n        \"code\": 0\n    }\n}"
+						},
+						{
+							"name": "Invalid input",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"\",\r\n  \"lastName\": \"\",\r\n  \"email\": \"johndoe@mail.com\",\r\n  \"password\": \"johndoepassword\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{auth_url}}/register",
+									"host": [
+										"{{auth_url}}"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "false"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "0"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "53"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1075"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"433-VTZnbi3hI87llaJjg4153Is4a4o\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 31 Dec 2022 07:38:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"message\": \"Invalid input error\",\n        \"stack\": \"Error: Invalid input error\\n    at D:\\\\webprojects\\\\quiz\\\\server\\\\controllers\\\\userController.js:41:11\\n    at asyncUtilWrap (D:\\\\webprojects\\\\quiz\\\\node_modules\\\\express-async-handler\\\\index.js:3:20)\\n    at Layer.handle [as handle_request] (D:\\\\webprojects\\\\quiz\\\\node_modules\\\\express\\\\lib\\\\router\\\\layer.js:95:5)\\n    at next (D:\\\\webprojects\\\\quiz\\\\node_modules\\\\express\\\\lib\\\\router\\\\route.js:144:13)\\n    at Route.dispatch (D:\\\\webprojects\\\\quiz\\\\node_modules\\\\express\\\\lib\\\\router\\\\route.js:114:3)\\n    at Layer.handle [as handle_request] (D:\\\\webprojects\\\\quiz\\\\node_modules\\\\express\\\\lib\\\\router\\\\layer.js:95:5)\\n    at D:\\\\webprojects\\\\quiz\\\\node_modules\\\\express\\\\lib\\\\router\\\\index.js:284:15\\n    at Function.process_params (D:\\\\webprojects\\\\quiz\\\\node_modules\\\\express\\\\lib\\\\router\\\\index.js:346:12)\\n    at next (D:\\\\webprojects\\\\quiz\\\\node_modules\\\\express\\\\lib\\\\router\\\\index.js:280:10)\\n    at Function.handle (D:\\\\webprojects\\\\quiz\\\\node_modules\\\\express\\\\lib\\\\router\\\\index.js:175:3)\",\n        \"type\": 0,\n        \"code\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"var schema = {\r",
+									"    \"type\": \"object\",\r",
+									"    \"properties\": {\r",
+									"        \"id\": { \"type\": \"string\" },\r",
+									"        \"firstName\": { \"type\": \"string\" },\r",
+									"        \"lastName\": { \"type\": \"string\" },\r",
+									"        \"email\": { \"type\": \"string\" },\r",
+									"        \"token\": { \"type\": \"string\" }\r",
+									"    },\r",
+									"    \"required\": [\"id\", \"firstName\", \"lastName\", \"email\", \"token\"]\r",
+									"};\r",
+									"\r",
+									"pm.test('Schema is valid', function () {\r",
+									"    pm.response.to.have.jsonSchema(schema);\r",
+									"});\r",
+									"\r",
+									"var jsonData = pm.response.json();\r",
+									"pm.collectionVariables.set(\"token\", jsonData.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"johndoe@mail.com\",\r\n  \"password\": \"johndoepassword\"\r\n}"
+						},
+						"url": {
+							"raw": "{{auth_url}}/login",
+							"host": [
+								"{{auth_url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"johndoe@mail.com\",\r\n  \"password\": \"johndoepassword\"\r\n}"
+								},
+								"url": {
+									"raw": "{{auth_url}}/login",
+									"host": [
+										"{{auth_url}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "false"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "0"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "553"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "278"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"116-pBb8e3o276fuePUjG4BqSjtsrEI\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 02 Jan 2023 05:53:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"63afe69c073d83832f8a12f5\",\n    \"firstName\": \"john\",\n    \"lastName\": \"doe\",\n    \"email\": \"johndoe@mail.com\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYWZlNjljMDczZDgzODMyZjhhMTJmNSIsImlhdCI6MTY3MjYzODgzNywiZXhwIjoxNjc1MjMwODM3fQ.YxFDs-sZGP6kTNKJGV73eIW49MnnIQdMizSMb2FHT9M\"\n}"
+						},
+						{
+							"name": "Invalid credentials",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"johndoe@mail.com\",\r\n  \"password\": \"\"\r\n}"
+								},
+								"url": {
+									"raw": "{{auth_url}}/login",
+									"host": [
+										"{{auth_url}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "false"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "0"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "512"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "174"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ae-lghlNMLTS0uvb67lx5y+RXqSZGc\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 02 Jan 2023 05:54:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"message\": \"Invalid credentials\",\n        \"stack\": \"Error: Invalid credentials\\n    at D:\\\\webprojects\\\\quiz\\\\server\\\\controllers\\\\userController.js:33:11\",\n        \"type\": 0,\n        \"code\": 0\n    }\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Quiz",
+			"item": [
+				{
+					"name": "Create Quiz",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"test quiz\",\r\n    \"description\": \"this is a quiz description\",\r\n    \"tags\": [\"1\",\"2\",\"34\",\"5\"],\r\n    \"shuffleQuestions\": false,\r\n    \"duration\": 1000,\r\n    \"published\": false,\r\n    \"questions\": [\r\n        {\r\n            \"id\": \"a1\",\r\n            \"description\": \"this is the first question\",\r\n            \"weightage\": 5,\r\n            \"imageUrl\": \"http://abc.def\",\r\n            \"noOfOptionsDisplayed\": 3,\r\n            \"shuffleOptions\": false,\r\n            \"correctOptionId\": \"1\",\r\n            \"options\": [\r\n                {\r\n                    \"id\": \"1\",\r\n                    \"description\": \"this is the first option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"2\",\r\n                    \"description\": \"this is the second option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"3\",\r\n                    \"description\": \"this is the third option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"id\": \"a2\",\r\n            \"description\": \"this is the second question\",\r\n            \"weightage\": 5,\r\n            \"imageUrl\": \"http://abc.def\",\r\n            \"noOfOptionsDisplayed\": 3,\r\n            \"shuffleOptions\": false,\r\n            \"correctOptionId\": \"2\",\r\n            \"options\": [\r\n                {\r\n                    \"id\": \"1\",\r\n                    \"description\": \"this is the first option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"2\",\r\n                    \"description\": \"this is the second option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"3\",\r\n                    \"description\": \"this is the third option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{quiz_uri}}/",
+							"host": [
+								"{{quiz_uri}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"test quiz\",\r\n    \"description\": \"this is a quiz description\",\r\n    \"tags\": [\"1\",\"2\",\"34\",\"5\"],\r\n    \"shuffleQuestions\": false,\r\n    \"duration\": 1000,\r\n    \"published\": false,\r\n    \"questions\": [\r\n        {\r\n            \"id\": \"a1\",\r\n            \"description\": \"this is the first question\",\r\n            \"weightage\": 5,\r\n            \"imageUrl\": \"http://abc.def\",\r\n            \"noOfOptionsDisplayed\": 3,\r\n            \"shuffleOptions\": false,\r\n            \"correctOptionId\": \"1\",\r\n            \"options\": [\r\n                {\r\n                    \"id\": \"1\",\r\n                    \"description\": \"this is the first option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"2\",\r\n                    \"description\": \"this is the second option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"3\",\r\n                    \"description\": \"this is the third option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"id\": \"a2\",\r\n            \"description\": \"this is the second question\",\r\n            \"weightage\": 5,\r\n            \"imageUrl\": \"http://abc.def\",\r\n            \"noOfOptionsDisplayed\": 3,\r\n            \"shuffleOptions\": false,\r\n            \"correctOptionId\": \"2\",\r\n            \"options\": [\r\n                {\r\n                    \"id\": \"1\",\r\n                    \"description\": \"this is the first option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"2\",\r\n                    \"description\": \"this is the second option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"3\",\r\n                    \"description\": \"this is the third option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{quiz_uri}}/",
+									"host": [
+										"{{quiz_uri}}"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "false"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "0"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "590"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1366"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"556-zApVInEH2hTjqTnYWsajPSwBBTQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 24 Jan 2023 20:22:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"title\": \"test quiz\",\n    \"description\": \"this is a quiz description\",\n    \"tags\": [\n        \"1\",\n        \"2\",\n        \"34\",\n        \"5\"\n    ],\n    \"shuffleQuestions\": false,\n    \"duration\": 1000,\n    \"published\": false,\n    \"questions\": [\n        {\n            \"id\": \"a1\",\n            \"description\": \"this is the first question\",\n            \"weightage\": 5,\n            \"imageUrl\": \"http://abc.def\",\n            \"noOfOptionsDisplayed\": 3,\n            \"shuffleOptions\": false,\n            \"correctOptionId\": \"1\",\n            \"options\": [\n                {\n                    \"id\": \"1\",\n                    \"description\": \"this is the first option for a1\",\n                    \"imageUrl\": \"http://abc.def\",\n                    \"_id\": \"63d03e0f9d265aa28680684d\"\n                },\n                {\n                    \"id\": \"2\",\n                    \"description\": \"this is the second option for a1\",\n                    \"imageUrl\": \"http://abc.def\",\n                    \"_id\": \"63d03e0f9d265aa28680684e\"\n                },\n                {\n                    \"id\": \"3\",\n                    \"description\": \"this is the third option for a1\",\n                    \"imageUrl\": \"http://abc.def\",\n                    \"_id\": \"63d03e0f9d265aa28680684f\"\n                }\n            ],\n            \"_id\": \"63d03e0f9d265aa28680684c\"\n        },\n        {\n            \"id\": \"a2\",\n            \"description\": \"this is the second question\",\n            \"weightage\": 5,\n            \"imageUrl\": \"http://abc.def\",\n            \"noOfOptionsDisplayed\": 3,\n            \"shuffleOptions\": false,\n            \"correctOptionId\": \"2\",\n            \"options\": [\n                {\n                    \"id\": \"1\",\n                    \"description\": \"this is the first option for a2\",\n                    \"imageUrl\": \"http://abc.def\",\n                    \"_id\": \"63d03e0f9d265aa286806851\"\n                },\n                {\n                    \"id\": \"2\",\n                    \"description\": \"this is the second option for a2\",\n                    \"imageUrl\": \"http://abc.def\",\n                    \"_id\": \"63d03e0f9d265aa286806852\"\n                },\n                {\n                    \"id\": \"3\",\n                    \"description\": \"this is the third option for a2\",\n                    \"imageUrl\": \"http://abc.def\",\n                    \"_id\": \"63d03e0f9d265aa286806853\"\n                }\n            ],\n            \"_id\": \"63d03e0f9d265aa286806850\"\n        }\n    ],\n    \"_id\": \"63d03e0f9d265aa28680684b\",\n    \"__v\": 0,\n    \"fullMarks\": 10\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Quizzes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{quiz_uri}}/?page=0",
+							"host": [
+								"{{quiz_uri}}"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{quiz_uri}}/?page=0",
+									"host": [
+										"{{quiz_uri}}"
+									],
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "false"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "0"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "485"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1183"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"49f-qlLK62tdxVAmY1Br1frPzU1gjt4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Jan 2023 08:24:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"skip\": 0,\n    \"limit\": 10,\n    \"total\": 1,\n    \"quizzes\": [\n        {\n            \"_id\": \"63d0e6e561162018df93fafa\",\n            \"title\": \"test quiz\",\n            \"description\": \"this is a quiz description\",\n            \"user_id\": \"63afe69c073d83832f8a12f5\",\n            \"tags\": [\n                \"1\",\n                \"2\",\n                \"34\",\n                \"5\"\n            ],\n            \"shuffleQuestions\": false,\n            \"duration\": 1000,\n            \"published\": false,\n            \"questions\": [\n                {\n                    \"id\": \"a1\",\n                    \"description\": \"this is the first question\",\n                    \"weightage\": 5,\n                    \"imageUrl\": \"http://abc.def\",\n                    \"noOfOptionsDisplayed\": 3,\n                    \"shuffleOptions\": false,\n                    \"correctOptionId\": \"1\",\n                    \"options\": [\n                        {\n                            \"id\": \"1\",\n                            \"description\": \"this is the first option for a1\",\n                            \"imageUrl\": \"http://abc.def\"\n                        },\n                        {\n                            \"id\": \"2\",\n                            \"description\": \"this is the second option for a1\",\n                            \"imageUrl\": \"http://abc.def\"\n                        },\n                        {\n                            \"id\": \"3\",\n                            \"description\": \"this is the third option for a1\",\n                            \"imageUrl\": \"http://abc.def\"\n                        }\n                    ]\n                },\n                {\n                    \"id\": \"a2\",\n                    \"description\": \"this is the second question\",\n                    \"weightage\": 5,\n                    \"imageUrl\": \"http://abc.def\",\n                    \"noOfOptionsDisplayed\": 3,\n                    \"shuffleOptions\": false,\n                    \"correctOptionId\": \"2\",\n                    \"options\": [\n                        {\n                            \"id\": \"1\",\n                            \"description\": \"this is the first option for a2\",\n                            \"imageUrl\": \"http://abc.def\"\n                        },\n                        {\n                            \"id\": \"2\",\n                            \"description\": \"this is the second option for a2\",\n                            \"imageUrl\": \"http://abc.def\"\n                        },\n                        {\n                            \"id\": \"3\",\n                            \"description\": \"this is the third option for a2\",\n                            \"imageUrl\": \"http://abc.def\"\n                        }\n                    ]\n                }\n            ],\n            \"__v\": 0,\n            \"fullMarks\": 10\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Quiz",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{quiz_uri}}/63d0e6e561162018df93fafa",
+							"host": [
+								"{{quiz_uri}}"
+							],
+							"path": [
+								"63d0e6e561162018df93fafa"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{quiz_uri}}/63d0e6e561162018df93fafa",
+									"host": [
+										"{{quiz_uri}}"
+									],
+									"path": [
+										"63d0e6e561162018df93fafa"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "false"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "0"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "599"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1139"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"473-x3e9SgbRjavV2kw6w4JHqlTi4OI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Jan 2023 20:07:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"63d0e6e561162018df93fafa\",\n    \"title\": \"test quiz\",\n    \"description\": \"this is a quiz description\",\n    \"user_id\": \"63afe69c073d83832f8a12f5\",\n    \"tags\": [\n        \"1\",\n        \"2\",\n        \"34\",\n        \"5\"\n    ],\n    \"shuffleQuestions\": false,\n    \"duration\": 1000,\n    \"published\": false,\n    \"questions\": [\n        {\n            \"id\": \"a1\",\n            \"description\": \"this is the first question\",\n            \"weightage\": 5,\n            \"imageUrl\": \"http://abc.def\",\n            \"noOfOptionsDisplayed\": 3,\n            \"shuffleOptions\": false,\n            \"correctOptionId\": \"1\",\n            \"options\": [\n                {\n                    \"id\": \"1\",\n                    \"description\": \"this is the first option for a1\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"2\",\n                    \"description\": \"this is the second option for a1\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"3\",\n                    \"description\": \"this is the third option for a1\",\n                    \"imageUrl\": \"http://abc.def\"\n                }\n            ]\n        },\n        {\n            \"id\": \"a2\",\n            \"description\": \"this is the second question\",\n            \"weightage\": 5,\n            \"imageUrl\": \"http://abc.def\",\n            \"noOfOptionsDisplayed\": 3,\n            \"shuffleOptions\": false,\n            \"correctOptionId\": \"2\",\n            \"options\": [\n                {\n                    \"id\": \"1\",\n                    \"description\": \"this is the first option for a2\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"2\",\n                    \"description\": \"this is the second option for a2\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"3\",\n                    \"description\": \"this is the third option for a2\",\n                    \"imageUrl\": \"http://abc.def\"\n                }\n            ]\n        }\n    ],\n    \"__v\": 0,\n    \"fullMarks\": 10\n}"
+						},
+						{
+							"name": "Not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{quiz_uri}}/63d0e6e561162018df93fafn",
+									"host": [
+										"{{quiz_uri}}"
+									],
+									"path": [
+										"63d0e6e561162018df93fafn"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "false"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "0"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "553"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "240"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f0-EeoEP89es8qDq2ck0kwjA5wR+mQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Jan 2023 20:07:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"message\": \"Quiz not found\",\n        \"stack\": \"Error: Quiz not found\\n    at D:\\\\WebProjects\\\\quiz\\\\backend\\\\controllers\\\\quizController.js:64:11\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\",\n        \"type\": 0,\n        \"code\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit Quiz",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"test quiz edited 1\",\r\n    \"description\": \"this is a quiz description\",\r\n    \"tags\": [\"1\",\"2\",\"34\",\"5\"],\r\n    \"shuffleQuestions\": false,\r\n    \"duration\": 1000,\r\n    \"published\": true,\r\n    \"questions\": [\r\n        {\r\n            \"id\": \"a1\",\r\n            \"description\": \"this is the first question\",\r\n            \"weightage\": 5,\r\n            \"imageUrl\": \"http://abc.def\",\r\n            \"noOfOptionsDisplayed\": 3,\r\n            \"shuffleOptions\": false,\r\n            \"correctOptionId\": \"1\",\r\n            \"options\": [\r\n                {\r\n                    \"id\": \"1\",\r\n                    \"description\": \"this is the first option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"2\",\r\n                    \"description\": \"this is the second option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"3\",\r\n                    \"description\": \"this is the third option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"id\": \"a2\",\r\n            \"description\": \"this is the second question\",\r\n            \"weightage\": 5,\r\n            \"imageUrl\": \"http://abc.def\",\r\n            \"noOfOptionsDisplayed\": 3,\r\n            \"shuffleOptions\": false,\r\n            \"correctOptionId\": \"2\",\r\n            \"options\": [\r\n                {\r\n                    \"id\": \"1\",\r\n                    \"description\": \"this is the first option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"2\",\r\n                    \"description\": \"this is the second option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"3\",\r\n                    \"description\": \"this is the third option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{quiz_uri}}/63d0e6e561162018df93fafa",
+							"host": [
+								"{{quiz_uri}}"
+							],
+							"path": [
+								"63d0e6e561162018df93fafa"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"test quiz edited\",\r\n    \"description\": \"this is a quiz description\",\r\n    \"tags\": [\"1\",\"2\",\"34\",\"5\"],\r\n    \"shuffleQuestions\": false,\r\n    \"duration\": 1000,\r\n    \"published\": false,\r\n    \"questions\": [\r\n        {\r\n            \"id\": \"a1\",\r\n            \"description\": \"this is the first question\",\r\n            \"weightage\": 5,\r\n            \"imageUrl\": \"http://abc.def\",\r\n            \"noOfOptionsDisplayed\": 3,\r\n            \"shuffleOptions\": false,\r\n            \"correctOptionId\": \"1\",\r\n            \"options\": [\r\n                {\r\n                    \"id\": \"1\",\r\n                    \"description\": \"this is the first option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"2\",\r\n                    \"description\": \"this is the second option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"3\",\r\n                    \"description\": \"this is the third option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"id\": \"a2\",\r\n            \"description\": \"this is the second question\",\r\n            \"weightage\": 5,\r\n            \"imageUrl\": \"http://abc.def\",\r\n            \"noOfOptionsDisplayed\": 3,\r\n            \"shuffleOptions\": false,\r\n            \"correctOptionId\": \"2\",\r\n            \"options\": [\r\n                {\r\n                    \"id\": \"1\",\r\n                    \"description\": \"this is the first option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"2\",\r\n                    \"description\": \"this is the second option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"3\",\r\n                    \"description\": \"this is the third option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{quiz_uri}}/63d0e6e561162018df93fafa",
+									"host": [
+										"{{quiz_uri}}"
+									],
+									"path": [
+										"63d0e6e561162018df93fafa"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "false"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "0"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "541"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1146"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"47a-BMfsB8TcSaK3tPlfJlIwv90GX/M\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Jan 2023 20:33:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"63d0e6e561162018df93fafa\",\n    \"title\": \"test quiz edited\",\n    \"description\": \"this is a quiz description\",\n    \"user_id\": \"63afe69c073d83832f8a12f5\",\n    \"tags\": [\n        \"1\",\n        \"2\",\n        \"34\",\n        \"5\"\n    ],\n    \"shuffleQuestions\": false,\n    \"duration\": 1000,\n    \"published\": false,\n    \"questions\": [\n        {\n            \"id\": \"a1\",\n            \"description\": \"this is the first question\",\n            \"weightage\": 5,\n            \"imageUrl\": \"http://abc.def\",\n            \"noOfOptionsDisplayed\": 3,\n            \"shuffleOptions\": false,\n            \"correctOptionId\": \"1\",\n            \"options\": [\n                {\n                    \"id\": \"1\",\n                    \"description\": \"this is the first option for a1\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"2\",\n                    \"description\": \"this is the second option for a1\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"3\",\n                    \"description\": \"this is the third option for a1\",\n                    \"imageUrl\": \"http://abc.def\"\n                }\n            ]\n        },\n        {\n            \"id\": \"a2\",\n            \"description\": \"this is the second question\",\n            \"weightage\": 5,\n            \"imageUrl\": \"http://abc.def\",\n            \"noOfOptionsDisplayed\": 3,\n            \"shuffleOptions\": false,\n            \"correctOptionId\": \"2\",\n            \"options\": [\n                {\n                    \"id\": \"1\",\n                    \"description\": \"this is the first option for a2\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"2\",\n                    \"description\": \"this is the second option for a2\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"3\",\n                    \"description\": \"this is the third option for a2\",\n                    \"imageUrl\": \"http://abc.def\"\n                }\n            ]\n        }\n    ],\n    \"__v\": 0,\n    \"fullMarks\": 10\n}"
+						},
+						{
+							"name": "Not found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"test quiz edited 2\",\r\n    \"description\": \"this is a quiz description\",\r\n    \"tags\": [\"1\",\"2\",\"34\",\"5\"],\r\n    \"shuffleQuestions\": false,\r\n    \"duration\": 1000,\r\n    \"published\": false,\r\n    \"questions\": [\r\n        {\r\n            \"id\": \"a1\",\r\n            \"description\": \"this is the first question\",\r\n            \"weightage\": 5,\r\n            \"imageUrl\": \"http://abc.def\",\r\n            \"noOfOptionsDisplayed\": 3,\r\n            \"shuffleOptions\": false,\r\n            \"correctOptionId\": \"1\",\r\n            \"options\": [\r\n                {\r\n                    \"id\": \"1\",\r\n                    \"description\": \"this is the first option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"2\",\r\n                    \"description\": \"this is the second option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"3\",\r\n                    \"description\": \"this is the third option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"id\": \"a2\",\r\n            \"description\": \"this is the second question\",\r\n            \"weightage\": 5,\r\n            \"imageUrl\": \"http://abc.def\",\r\n            \"noOfOptionsDisplayed\": 3,\r\n            \"shuffleOptions\": false,\r\n            \"correctOptionId\": \"2\",\r\n            \"options\": [\r\n                {\r\n                    \"id\": \"1\",\r\n                    \"description\": \"this is the first option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"2\",\r\n                    \"description\": \"this is the second option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"3\",\r\n                    \"description\": \"this is the third option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{quiz_uri}}/63d0e6e561162018df93fafb",
+									"host": [
+										"{{quiz_uri}}"
+									],
+									"path": [
+										"63d0e6e561162018df93fafb"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "false"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "0"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "523"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "241"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f1-9wWxeFZz3A6BupwMtafNicMQ7c8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Jan 2023 20:33:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"message\": \"Quiz not found\",\n        \"stack\": \"Error: Quiz not found\\n    at D:\\\\WebProjects\\\\quiz\\\\backend\\\\controllers\\\\quizController.js:100:11\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\",\n        \"type\": 0,\n        \"code\": 0\n    }\n}"
+						},
+						{
+							"name": "Forbidden (After publishing)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"test quiz edited 1\",\r\n    \"description\": \"this is a quiz description\",\r\n    \"tags\": [\"1\",\"2\",\"34\",\"5\"],\r\n    \"shuffleQuestions\": false,\r\n    \"duration\": 1000,\r\n    \"published\": true,\r\n    \"questions\": [\r\n        {\r\n            \"id\": \"a1\",\r\n            \"description\": \"this is the first question\",\r\n            \"weightage\": 5,\r\n            \"imageUrl\": \"http://abc.def\",\r\n            \"noOfOptionsDisplayed\": 3,\r\n            \"shuffleOptions\": false,\r\n            \"correctOptionId\": \"1\",\r\n            \"options\": [\r\n                {\r\n                    \"id\": \"1\",\r\n                    \"description\": \"this is the first option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"2\",\r\n                    \"description\": \"this is the second option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"3\",\r\n                    \"description\": \"this is the third option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"id\": \"a2\",\r\n            \"description\": \"this is the second question\",\r\n            \"weightage\": 5,\r\n            \"imageUrl\": \"http://abc.def\",\r\n            \"noOfOptionsDisplayed\": 3,\r\n            \"shuffleOptions\": false,\r\n            \"correctOptionId\": \"2\",\r\n            \"options\": [\r\n                {\r\n                    \"id\": \"1\",\r\n                    \"description\": \"this is the first option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"2\",\r\n                    \"description\": \"this is the second option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"3\",\r\n                    \"description\": \"this is the third option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{quiz_uri}}/63d0e6e561162018df93fafa",
+									"host": [
+										"{{quiz_uri}}"
+									],
+									"path": [
+										"63d0e6e561162018df93fafa"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "false"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "0"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "418"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "283"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11b-O6fS6Yl6ZVcF8z4XTp3BnUyNDNQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 26 Jan 2023 19:30:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"message\": \"Quiz cannot edited after publishing\",\n        \"stack\": \"Error: Quiz cannot edited after publishing\\n    at D:\\\\WebProjects\\\\quiz\\\\backend\\\\controllers\\\\quizController.js:101:11\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\",\n        \"type\": 0,\n        \"code\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Quiz",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{quiz_uri}}/63d2d70fa07e201c5a863750",
+							"host": [
+								"{{quiz_uri}}"
+							],
+							"path": [
+								"63d2d70fa07e201c5a863750"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{quiz_uri}}/63d195621ac0ef198499429b",
+									"host": [
+										"{{quiz_uri}}"
+									],
+									"path": [
+										"63d195621ac0ef198499429b"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "false"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "0"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "582"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "34"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"22-fygD1MfMzeGCUXn2UuhZLgOqHTc\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Jan 2023 20:47:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"63d195621ac0ef198499429b\"\n}"
+						},
+						{
+							"name": "Not found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{quiz_uri}}/63d195621ac0ef198499429b",
+									"host": [
+										"{{quiz_uri}}"
+									],
+									"path": [
+										"63d195621ac0ef198499429b"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "false"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "0"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "569"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "241"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f1-uIiIeaYaWeroD0bGGeNba+B+jjw\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Jan 2023 20:47:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"message\": \"Quiz not found\",\n        \"stack\": \"Error: Quiz not found\\n    at D:\\\\WebProjects\\\\quiz\\\\backend\\\\controllers\\\\quizController.js:121:11\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\",\n        \"type\": 0,\n        \"code\": 0\n    }\n}"
+						},
+						{
+							"name": "Forbidden (After publishing)",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{quiz_uri}}/63d2d70fa07e201c5a863750",
+									"host": [
+										"{{quiz_uri}}"
+									],
+									"path": [
+										"63d2d70fa07e201c5a863750"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "false"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "0"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "102"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "285"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11d-5qyxO32JHldYYPgEUQDxgbvgzUQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 26 Jan 2023 19:40:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"message\": \"Quiz cannot deleted after publishing\",\n        \"stack\": \"Error: Quiz cannot deleted after publishing\\n    at D:\\\\WebProjects\\\\quiz\\\\backend\\\\controllers\\\\quizController.js:131:11\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\",\n        \"type\": 0,\n        \"code\": 0\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "domain",
+			"value": "localhost:3001",
+			"type": "default"
+		},
+		{
+			"key": "api_version",
+			"value": "v1",
+			"type": "default"
+		},
+		{
+			"key": "base_url",
+			"value": "{{domain}}/api/{{api_version}}",
+			"type": "default"
+		},
+		{
+			"key": "auth_url",
+			"value": "{{base_url}}/auth",
+			"type": "default"
+		},
+		{
+			"key": "quiz_uri",
+			"value": "{{base_url}}/quiz",
+			"type": "default"
+		},
+		{
+			"key": "token",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
