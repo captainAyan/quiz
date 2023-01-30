@@ -15,7 +15,7 @@ const createQuiz = asyncHandler(async (req, res, next) => {
     throw new ErrorResponse(error.details[0].message, StatusCodes.BAD_REQUEST);
   }
 
-  const quiz = await Quiz.create({ ...req.body, user_id: req.user.id });
+  const quiz = await Quiz.create({ ...req.body, userId: req.user.id });
 
   if (!quiz) {
     throw new ErrorResponse("Something went wrong", StatusCodes.BAD_REQUEST);
@@ -31,7 +31,7 @@ const getQuizzes = asyncHandler(async (req, res, next) => {
   const PAGE =
     parseInt(req.query.page, 10) > 0 ? parseInt(req.query.page, 10) : 0;
 
-  const quizzes = await Quiz.find({ user_id: req.user.id })
+  const quizzes = await Quiz.find({ userId: req.user.id })
     .skip(PAGE * PAGINATION_LIMIT)
     .limit(PAGINATION_LIMIT);
 
@@ -42,7 +42,7 @@ const getQuizzes = asyncHandler(async (req, res, next) => {
   const response = {
     skip: PAGE * PAGINATION_LIMIT,
     limit: PAGINATION_LIMIT,
-    total: await Quiz.find({ user_id: req.user.id }).count(),
+    total: await Quiz.find({ userId: req.user.id }).count(),
     quizzes: quizzes.map((quiz) => {
       const fullMarks = quiz
         .toJSON()
@@ -59,7 +59,7 @@ const getQuiz = asyncHandler(async (req, res, next) => {
   let quiz;
 
   try {
-    quiz = await Quiz.findOne({ _id: id, user_id: req.user.id });
+    quiz = await Quiz.findOne({ _id: id, userId: req.user.id });
   } catch (error) {
     // for invalid mongodb objectid
     throw new ErrorResponse("Quiz not found", StatusCodes.NOT_FOUND);
@@ -87,7 +87,7 @@ const editQuiz = asyncHandler(async (req, res, next) => {
   let quiz;
 
   try {
-    quiz = await Quiz.findOne({ _id: id, user_id: req.user.id });
+    quiz = await Quiz.findOne({ _id: id, userId: req.user.id });
   } catch (error) {
     // for invalid mongodb objectid
     throw new ErrorResponse("Quiz not found", StatusCodes.NOT_FOUND);
@@ -104,7 +104,7 @@ const editQuiz = asyncHandler(async (req, res, next) => {
     );
   else {
     await quiz.updateOne(req.body);
-    quiz = await Quiz.findOne({ _id: id, user_id: req.user.id });
+    quiz = await Quiz.findOne({ _id: id, userId: req.user.id });
   }
 
   const fullMarks = quiz.questions.reduce((acc, q) => acc + q.weightage, 0);
@@ -118,7 +118,7 @@ const deleteQuiz = asyncHandler(async (req, res, next) => {
   let quiz;
 
   try {
-    quiz = await Quiz.findOne({ _id: id, user_id: req.user.id });
+    quiz = await Quiz.findOne({ _id: id, userId: req.user.id });
   } catch (error) {
     // for invalid mongodb objectid
     throw new ErrorResponse("Quiz not found", StatusCodes.NOT_FOUND);

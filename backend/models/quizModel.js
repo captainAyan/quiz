@@ -26,7 +26,7 @@ const quizSchema = new mongoose.Schema({
     minlength: 1,
     maxlength: QUIZ_DESCRIPTION_MAX_LENGTH,
   },
-  user_id: {
+  userId: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
     ref: "User",
