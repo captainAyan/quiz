@@ -916,7 +916,7 @@
 								},
 								{
 									"key": "RateLimit-Reset",
-									"value": "590"
+									"value": "584"
 								},
 								{
 									"key": "Content-Type",
@@ -924,15 +924,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "1366"
+									"value": "1170"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"556-zApVInEH2hTjqTnYWsajPSwBBTQ\""
+									"value": "W/\"492-tttKUrRkbXvF5mpHmqVYmxbYQjw\""
 								},
 								{
 									"key": "Date",
-									"value": "Tue, 24 Jan 2023 20:22:40 GMT"
+									"value": "Mon, 30 Jan 2023 09:38:39 GMT"
 								},
 								{
 									"key": "Connection",
@@ -944,7 +944,131 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"title\": \"test quiz\",\n    \"description\": \"this is a quiz description\",\n    \"tags\": [\n        \"1\",\n        \"2\",\n        \"34\",\n        \"5\"\n    ],\n    \"shuffleQuestions\": false,\n    \"duration\": 1000,\n    \"published\": false,\n    \"questions\": [\n        {\n            \"id\": \"a1\",\n            \"description\": \"this is the first question\",\n            \"weightage\": 5,\n            \"imageUrl\": \"http://abc.def\",\n            \"noOfOptionsDisplayed\": 3,\n            \"shuffleOptions\": false,\n            \"correctOptionId\": \"1\",\n            \"options\": [\n                {\n                    \"id\": \"1\",\n                    \"description\": \"this is the first option for a1\",\n                    \"imageUrl\": \"http://abc.def\",\n                    \"_id\": \"63d03e0f9d265aa28680684d\"\n                },\n                {\n                    \"id\": \"2\",\n                    \"description\": \"this is the second option for a1\",\n                    \"imageUrl\": \"http://abc.def\",\n                    \"_id\": \"63d03e0f9d265aa28680684e\"\n                },\n                {\n                    \"id\": \"3\",\n                    \"description\": \"this is the third option for a1\",\n                    \"imageUrl\": \"http://abc.def\",\n                    \"_id\": \"63d03e0f9d265aa28680684f\"\n                }\n            ],\n            \"_id\": \"63d03e0f9d265aa28680684c\"\n        },\n        {\n            \"id\": \"a2\",\n            \"description\": \"this is the second question\",\n            \"weightage\": 5,\n            \"imageUrl\": \"http://abc.def\",\n            \"noOfOptionsDisplayed\": 3,\n            \"shuffleOptions\": false,\n            \"correctOptionId\": \"2\",\n            \"options\": [\n                {\n                    \"id\": \"1\",\n                    \"description\": \"this is the first option for a2\",\n                    \"imageUrl\": \"http://abc.def\",\n                    \"_id\": \"63d03e0f9d265aa286806851\"\n                },\n                {\n                    \"id\": \"2\",\n                    \"description\": \"this is the second option for a2\",\n                    \"imageUrl\": \"http://abc.def\",\n                    \"_id\": \"63d03e0f9d265aa286806852\"\n                },\n                {\n                    \"id\": \"3\",\n                    \"description\": \"this is the third option for a2\",\n                    \"imageUrl\": \"http://abc.def\",\n                    \"_id\": \"63d03e0f9d265aa286806853\"\n                }\n            ],\n            \"_id\": \"63d03e0f9d265aa286806850\"\n        }\n    ],\n    \"_id\": \"63d03e0f9d265aa28680684b\",\n    \"__v\": 0,\n    \"fullMarks\": 10\n}"
+							"body": "{\n    \"title\": \"test quiz\",\n    \"description\": \"this is a quiz description\",\n    \"userId\": \"63afe69c073d83832f8a12f5\",\n    \"tags\": [\n        \"1\",\n        \"2\",\n        \"34\",\n        \"5\"\n    ],\n    \"shuffleQuestions\": false,\n    \"duration\": 1000,\n    \"published\": false,\n    \"questions\": [\n        {\n            \"id\": \"a1\",\n            \"description\": \"this is the first question\",\n            \"weightage\": 5,\n            \"imageUrl\": \"http://abc.def\",\n            \"noOfOptionsDisplayed\": 3,\n            \"shuffleOptions\": false,\n            \"correctOptionId\": \"1\",\n            \"options\": [\n                {\n                    \"id\": \"1\",\n                    \"description\": \"this is the first option for a1\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"2\",\n                    \"description\": \"this is the second option for a1\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"3\",\n                    \"description\": \"this is the third option for a1\",\n                    \"imageUrl\": \"http://abc.def\"\n                }\n            ]\n        },\n        {\n            \"id\": \"a2\",\n            \"description\": \"this is the second question\",\n            \"weightage\": 5,\n            \"imageUrl\": \"http://abc.def\",\n            \"noOfOptionsDisplayed\": 3,\n            \"shuffleOptions\": false,\n            \"correctOptionId\": \"2\",\n            \"options\": [\n                {\n                    \"id\": \"1\",\n                    \"description\": \"this is the first option for a2\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"2\",\n                    \"description\": \"this is the second option for a2\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"3\",\n                    \"description\": \"this is the third option for a2\",\n                    \"imageUrl\": \"http://abc.def\"\n                }\n            ]\n        }\n    ],\n    \"_id\": \"63d7901ebdbda48b2b37de10\",\n    \"__v\": 0,\n    \"fullMarks\": 10,\n    \"id\": \"63d7901ebdbda48b2b37de10\"\n}"
+						},
+						{
+							"name": "Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"\",\r\n    \"description\": \"this is a quiz description\",\r\n    \"tags\": [\"1\",\"2\",\"34\",\"5\"],\r\n    \"shuffleQuestions\": false,\r\n    \"duration\": 1000,\r\n    \"published\": false,\r\n    \"questions\": [\r\n        {\r\n            \"id\": \"a1\",\r\n            \"description\": \"this is the first question\",\r\n            \"weightage\": 5,\r\n            \"imageUrl\": \"http://abc.def\",\r\n            \"noOfOptionsDisplayed\": 3,\r\n            \"shuffleOptions\": false,\r\n            \"correctOptionId\": \"1\",\r\n            \"options\": [\r\n                {\r\n                    \"id\": \"1\",\r\n                    \"description\": \"this is the first option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"2\",\r\n                    \"description\": \"this is the second option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"3\",\r\n                    \"description\": \"this is the third option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"id\": \"a2\",\r\n            \"description\": \"this is the second question\",\r\n            \"weightage\": 5,\r\n            \"imageUrl\": \"http://abc.def\",\r\n            \"noOfOptionsDisplayed\": 3,\r\n            \"shuffleOptions\": false,\r\n            \"correctOptionId\": \"2\",\r\n            \"options\": [\r\n                {\r\n                    \"id\": \"1\",\r\n                    \"description\": \"this is the first option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"2\",\r\n                    \"description\": \"this is the second option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"3\",\r\n                    \"description\": \"this is the third option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{quiz_uri}}/",
+									"host": [
+										"{{quiz_uri}}"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "false"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "0"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "296"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "663"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"297-up+qqElmmEt2tSg6DRy8XZM1sfA\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 30 Jan 2023 09:43:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"message\": \"\\\"title\\\" is not allowed to be empty\",\n        \"stack\": \"Error: \\\"title\\\" is not allowed to be empty\\n    at D:\\\\WebProjects\\\\quiz\\\\backend\\\\controllers\\\\quizController.js:17:11\\n    at asyncUtilWrap (D:\\\\WebProjects\\\\quiz\\\\node_modules\\\\express-async-handler\\\\index.js:3:20)\\n    at Layer.handle [as handle_request] (D:\\\\WebProjects\\\\quiz\\\\node_modules\\\\express\\\\lib\\\\router\\\\layer.js:95:5)\\n    at next (D:\\\\WebProjects\\\\quiz\\\\node_modules\\\\express\\\\lib\\\\router\\\\route.js:144:13)\\n    at D:\\\\WebProjects\\\\quiz\\\\backend\\\\middleware\\\\authMiddleware.js:27:5\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\",\n        \"type\": 0,\n        \"code\": 0\n    }\n}"
 						}
 					]
 				},
@@ -1061,7 +1185,7 @@
 								},
 								{
 									"key": "RateLimit-Reset",
-									"value": "485"
+									"value": "554"
 								},
 								{
 									"key": "Content-Type",
@@ -1069,15 +1193,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "1183"
+									"value": "3563"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"49f-qlLK62tdxVAmY1Br1frPzU1gjt4\""
+									"value": "W/\"deb-UeNZ9pYoo3lyRZXn3yko/+qE1JU\""
 								},
 								{
 									"key": "Date",
-									"value": "Wed, 25 Jan 2023 08:24:39 GMT"
+									"value": "Mon, 30 Jan 2023 09:39:09 GMT"
 								},
 								{
 									"key": "Connection",
@@ -1089,7 +1213,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"skip\": 0,\n    \"limit\": 10,\n    \"total\": 1,\n    \"quizzes\": [\n        {\n            \"_id\": \"63d0e6e561162018df93fafa\",\n            \"title\": \"test quiz\",\n            \"description\": \"this is a quiz description\",\n            \"user_id\": \"63afe69c073d83832f8a12f5\",\n            \"tags\": [\n                \"1\",\n                \"2\",\n                \"34\",\n                \"5\"\n            ],\n            \"shuffleQuestions\": false,\n            \"duration\": 1000,\n            \"published\": false,\n            \"questions\": [\n                {\n                    \"id\": \"a1\",\n                    \"description\": \"this is the first question\",\n                    \"weightage\": 5,\n                    \"imageUrl\": \"http://abc.def\",\n                    \"noOfOptionsDisplayed\": 3,\n                    \"shuffleOptions\": false,\n                    \"correctOptionId\": \"1\",\n                    \"options\": [\n                        {\n                            \"id\": \"1\",\n                            \"description\": \"this is the first option for a1\",\n                            \"imageUrl\": \"http://abc.def\"\n                        },\n                        {\n                            \"id\": \"2\",\n                            \"description\": \"this is the second option for a1\",\n                            \"imageUrl\": \"http://abc.def\"\n                        },\n                        {\n                            \"id\": \"3\",\n                            \"description\": \"this is the third option for a1\",\n                            \"imageUrl\": \"http://abc.def\"\n                        }\n                    ]\n                },\n                {\n                    \"id\": \"a2\",\n                    \"description\": \"this is the second question\",\n                    \"weightage\": 5,\n                    \"imageUrl\": \"http://abc.def\",\n                    \"noOfOptionsDisplayed\": 3,\n                    \"shuffleOptions\": false,\n                    \"correctOptionId\": \"2\",\n                    \"options\": [\n                        {\n                            \"id\": \"1\",\n                            \"description\": \"this is the first option for a2\",\n                            \"imageUrl\": \"http://abc.def\"\n                        },\n                        {\n                            \"id\": \"2\",\n                            \"description\": \"this is the second option for a2\",\n                            \"imageUrl\": \"http://abc.def\"\n                        },\n                        {\n                            \"id\": \"3\",\n                            \"description\": \"this is the third option for a2\",\n                            \"imageUrl\": \"http://abc.def\"\n                        }\n                    ]\n                }\n            ],\n            \"__v\": 0,\n            \"fullMarks\": 10\n        }\n    ]\n}"
+							"body": "{\n    \"skip\": 0,\n    \"limit\": 10,\n    \"total\": 3,\n    \"quizzes\": [\n        {\n            \"_id\": \"63d0e6e561162018df93fafa\",\n            \"title\": \"test quiz edited 1\",\n            \"description\": \"this is a quiz description\",\n            \"tags\": [\n                \"1\",\n                \"2\",\n                \"34\",\n                \"5\"\n            ],\n            \"shuffleQuestions\": true,\n            \"duration\": 1000,\n            \"published\": true,\n            \"questions\": [\n                {\n                    \"id\": \"a1\",\n                    \"description\": \"this is the first question\",\n                    \"weightage\": 5,\n                    \"imageUrl\": \"http://abc.def\",\n                    \"noOfOptionsDisplayed\": 3,\n                    \"shuffleOptions\": false,\n                    \"correctOptionId\": \"1\",\n                    \"options\": [\n                        {\n                            \"id\": \"1\",\n                            \"description\": \"this is the first option for a1\",\n                            \"imageUrl\": \"http://abc.def\"\n                        },\n                        {\n                            \"id\": \"2\",\n                            \"description\": \"this is the second option for a1\",\n                            \"imageUrl\": \"http://abc.def\"\n                        },\n                        {\n                            \"id\": \"3\",\n                            \"description\": \"this is the third option for a1\",\n                            \"imageUrl\": \"http://abc.def\"\n                        }\n                    ]\n                },\n                {\n                    \"id\": \"a2\",\n                    \"description\": \"this is the second question\",\n                    \"weightage\": 5,\n                    \"imageUrl\": \"http://abc.def\",\n                    \"noOfOptionsDisplayed\": 3,\n                    \"shuffleOptions\": false,\n                    \"correctOptionId\": \"2\",\n                    \"options\": [\n                        {\n                            \"id\": \"1\",\n                            \"description\": \"this is the first option for a2\",\n                            \"imageUrl\": \"http://abc.def\"\n                        },\n                        {\n                            \"id\": \"2\",\n                            \"description\": \"this is the second option for a2\",\n                            \"imageUrl\": \"http://abc.def\"\n                        },\n                        {\n                            \"id\": \"3\",\n                            \"description\": \"this is the third option for a2\",\n                            \"imageUrl\": \"http://abc.def\"\n                        }\n                    ]\n                }\n            ],\n            \"__v\": 0,\n            \"userId\": \"63afe69c073d83832f8a12f5\",\n            \"fullMarks\": 10,\n            \"id\": \"63d0e6e561162018df93fafa\"\n        },\n        {\n            \"_id\": \"63d774a110759d24b02768a9\",\n            \"title\": \"test quiz\",\n            \"description\": \"this is a quiz description\",\n            \"userId\": \"63afe69c073d83832f8a12f5\",\n            \"tags\": [\n                \"1\",\n                \"2\",\n                \"34\",\n                \"5\"\n            ],\n            \"shuffleQuestions\": false,\n            \"duration\": 1000,\n            \"published\": false,\n            \"questions\": [\n                {\n                    \"id\": \"a1\",\n                    \"description\": \"this is the first question\",\n                    \"weightage\": 5,\n                    \"imageUrl\": \"http://abc.def\",\n                    \"noOfOptionsDisplayed\": 3,\n                    \"shuffleOptions\": false,\n                    \"correctOptionId\": \"1\",\n                    \"options\": [\n                        {\n                            \"id\": \"1\",\n                            \"description\": \"this is the first option for a1\",\n                            \"imageUrl\": \"http://abc.def\"\n                        },\n                        {\n                            \"id\": \"2\",\n                            \"description\": \"this is the second option for a1\",\n                            \"imageUrl\": \"http://abc.def\"\n                        },\n                        {\n                            \"id\": \"3\",\n                            \"description\": \"this is the third option for a1\",\n                            \"imageUrl\": \"http://abc.def\"\n                        }\n                    ]\n                },\n                {\n                    \"id\": \"a2\",\n                    \"description\": \"this is the second question\",\n                    \"weightage\": 5,\n                    \"imageUrl\": \"http://abc.def\",\n                    \"noOfOptionsDisplayed\": 3,\n                    \"shuffleOptions\": false,\n                    \"correctOptionId\": \"2\",\n                    \"options\": [\n                        {\n                            \"id\": \"1\",\n                            \"description\": \"this is the first option for a2\",\n                            \"imageUrl\": \"http://abc.def\"\n                        },\n                        {\n                            \"id\": \"2\",\n                            \"description\": \"this is the second option for a2\",\n                            \"imageUrl\": \"http://abc.def\"\n                        },\n                        {\n                            \"id\": \"3\",\n                            \"description\": \"this is the third option for a2\",\n                            \"imageUrl\": \"http://abc.def\"\n                        }\n                    ]\n                }\n            ],\n            \"__v\": 0,\n            \"fullMarks\": 10,\n            \"id\": \"63d774a110759d24b02768a9\"\n        },\n        {\n            \"_id\": \"63d7901ebdbda48b2b37de10\",\n            \"title\": \"test quiz\",\n            \"description\": \"this is a quiz description\",\n            \"userId\": \"63afe69c073d83832f8a12f5\",\n            \"tags\": [\n                \"1\",\n                \"2\",\n                \"34\",\n                \"5\"\n            ],\n            \"shuffleQuestions\": false,\n            \"duration\": 1000,\n            \"published\": false,\n            \"questions\": [\n                {\n                    \"id\": \"a1\",\n                    \"description\": \"this is the first question\",\n                    \"weightage\": 5,\n                    \"imageUrl\": \"http://abc.def\",\n                    \"noOfOptionsDisplayed\": 3,\n                    \"shuffleOptions\": false,\n                    \"correctOptionId\": \"1\",\n                    \"options\": [\n                        {\n                            \"id\": \"1\",\n                            \"description\": \"this is the first option for a1\",\n                            \"imageUrl\": \"http://abc.def\"\n                        },\n                        {\n                            \"id\": \"2\",\n                            \"description\": \"this is the second option for a1\",\n                            \"imageUrl\": \"http://abc.def\"\n                        },\n                        {\n                            \"id\": \"3\",\n                            \"description\": \"this is the third option for a1\",\n                            \"imageUrl\": \"http://abc.def\"\n                        }\n                    ]\n                },\n                {\n                    \"id\": \"a2\",\n                    \"description\": \"this is the second question\",\n                    \"weightage\": 5,\n                    \"imageUrl\": \"http://abc.def\",\n                    \"noOfOptionsDisplayed\": 3,\n                    \"shuffleOptions\": false,\n                    \"correctOptionId\": \"2\",\n                    \"options\": [\n                        {\n                            \"id\": \"1\",\n                            \"description\": \"this is the first option for a2\",\n                            \"imageUrl\": \"http://abc.def\"\n                        },\n                        {\n                            \"id\": \"2\",\n                            \"description\": \"this is the second option for a2\",\n                            \"imageUrl\": \"http://abc.def\"\n                        },\n                        {\n                            \"id\": \"3\",\n                            \"description\": \"this is the third option for a2\",\n                            \"imageUrl\": \"http://abc.def\"\n                        }\n                    ]\n                }\n            ],\n            \"__v\": 0,\n            \"fullMarks\": 10,\n            \"id\": \"63d7901ebdbda48b2b37de10\"\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -1194,7 +1318,7 @@
 								},
 								{
 									"key": "RateLimit-Reset",
-									"value": "599"
+									"value": "391"
 								},
 								{
 									"key": "Content-Type",
@@ -1202,15 +1326,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "1139"
+									"value": "1177"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"473-x3e9SgbRjavV2kw6w4JHqlTi4OI\""
+									"value": "W/\"499-zsP32vtG77El4LGGD8HZ1prF5z8\""
 								},
 								{
 									"key": "Date",
-									"value": "Wed, 25 Jan 2023 20:07:08 GMT"
+									"value": "Mon, 30 Jan 2023 09:41:52 GMT"
 								},
 								{
 									"key": "Connection",
@@ -1222,7 +1346,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"_id\": \"63d0e6e561162018df93fafa\",\n    \"title\": \"test quiz\",\n    \"description\": \"this is a quiz description\",\n    \"user_id\": \"63afe69c073d83832f8a12f5\",\n    \"tags\": [\n        \"1\",\n        \"2\",\n        \"34\",\n        \"5\"\n    ],\n    \"shuffleQuestions\": false,\n    \"duration\": 1000,\n    \"published\": false,\n    \"questions\": [\n        {\n            \"id\": \"a1\",\n            \"description\": \"this is the first question\",\n            \"weightage\": 5,\n            \"imageUrl\": \"http://abc.def\",\n            \"noOfOptionsDisplayed\": 3,\n            \"shuffleOptions\": false,\n            \"correctOptionId\": \"1\",\n            \"options\": [\n                {\n                    \"id\": \"1\",\n                    \"description\": \"this is the first option for a1\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"2\",\n                    \"description\": \"this is the second option for a1\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"3\",\n                    \"description\": \"this is the third option for a1\",\n                    \"imageUrl\": \"http://abc.def\"\n                }\n            ]\n        },\n        {\n            \"id\": \"a2\",\n            \"description\": \"this is the second question\",\n            \"weightage\": 5,\n            \"imageUrl\": \"http://abc.def\",\n            \"noOfOptionsDisplayed\": 3,\n            \"shuffleOptions\": false,\n            \"correctOptionId\": \"2\",\n            \"options\": [\n                {\n                    \"id\": \"1\",\n                    \"description\": \"this is the first option for a2\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"2\",\n                    \"description\": \"this is the second option for a2\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"3\",\n                    \"description\": \"this is the third option for a2\",\n                    \"imageUrl\": \"http://abc.def\"\n                }\n            ]\n        }\n    ],\n    \"__v\": 0,\n    \"fullMarks\": 10\n}"
+							"body": "{\n    \"_id\": \"63d0e6e561162018df93fafa\",\n    \"title\": \"test quiz edited 1\",\n    \"description\": \"this is a quiz description\",\n    \"tags\": [\n        \"1\",\n        \"2\",\n        \"34\",\n        \"5\"\n    ],\n    \"shuffleQuestions\": true,\n    \"duration\": 1000,\n    \"published\": true,\n    \"questions\": [\n        {\n            \"id\": \"a1\",\n            \"description\": \"this is the first question\",\n            \"weightage\": 5,\n            \"imageUrl\": \"http://abc.def\",\n            \"noOfOptionsDisplayed\": 3,\n            \"shuffleOptions\": false,\n            \"correctOptionId\": \"1\",\n            \"options\": [\n                {\n                    \"id\": \"1\",\n                    \"description\": \"this is the first option for a1\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"2\",\n                    \"description\": \"this is the second option for a1\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"3\",\n                    \"description\": \"this is the third option for a1\",\n                    \"imageUrl\": \"http://abc.def\"\n                }\n            ]\n        },\n        {\n            \"id\": \"a2\",\n            \"description\": \"this is the second question\",\n            \"weightage\": 5,\n            \"imageUrl\": \"http://abc.def\",\n            \"noOfOptionsDisplayed\": 3,\n            \"shuffleOptions\": false,\n            \"correctOptionId\": \"2\",\n            \"options\": [\n                {\n                    \"id\": \"1\",\n                    \"description\": \"this is the first option for a2\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"2\",\n                    \"description\": \"this is the second option for a2\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"3\",\n                    \"description\": \"this is the third option for a2\",\n                    \"imageUrl\": \"http://abc.def\"\n                }\n            ]\n        }\n    ],\n    \"__v\": 0,\n    \"userId\": \"63afe69c073d83832f8a12f5\",\n    \"fullMarks\": 10,\n    \"id\": \"63d0e6e561162018df93fafa\"\n}"
 						},
 						{
 							"name": "Not found",
@@ -1230,12 +1354,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{quiz_uri}}/63d0e6e561162018df93fafn",
+									"raw": "{{quiz_uri}}/63d0e6e561162018df93fafb",
 									"host": [
 										"{{quiz_uri}}"
 									],
 									"path": [
-										"63d0e6e561162018df93fafn"
+										"63d0e6e561162018df93fafb"
 									]
 								}
 							},
@@ -1309,7 +1433,7 @@
 								},
 								{
 									"key": "RateLimit-Reset",
-									"value": "553"
+									"value": "305"
 								},
 								{
 									"key": "Content-Type",
@@ -1321,11 +1445,11 @@
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"f0-EeoEP89es8qDq2ck0kwjA5wR+mQ\""
+									"value": "W/\"f0-r0fqW5hI8rXk16OJ/leK2Dh8OxM\""
 								},
 								{
 									"key": "Date",
-									"value": "Wed, 25 Jan 2023 20:07:54 GMT"
+									"value": "Mon, 30 Jan 2023 07:44:25 GMT"
 								},
 								{
 									"key": "Connection",
@@ -1337,7 +1461,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"error\": {\n        \"message\": \"Quiz not found\",\n        \"stack\": \"Error: Quiz not found\\n    at D:\\\\WebProjects\\\\quiz\\\\backend\\\\controllers\\\\quizController.js:64:11\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\",\n        \"type\": 0,\n        \"code\": 0\n    }\n}"
+							"body": "{\n    \"error\": {\n        \"message\": \"Quiz not found\",\n        \"stack\": \"Error: Quiz not found\\n    at D:\\\\WebProjects\\\\quiz\\\\backend\\\\controllers\\\\quizController.js:71:11\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\",\n        \"type\": 0,\n        \"code\": 0\n    }\n}"
 						}
 					]
 				},
@@ -1373,7 +1497,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"title\":\"test quiz edited\",\r\n    \"description\": \"this is a quiz description\",\r\n    \"tags\": [\"1\",\"2\",\"34\",\"5\"],\r\n    \"shuffleQuestions\": false,\r\n    \"duration\": 1000,\r\n    \"published\": false,\r\n    \"questions\": [\r\n        {\r\n            \"id\": \"a1\",\r\n            \"description\": \"this is the first question\",\r\n            \"weightage\": 5,\r\n            \"imageUrl\": \"http://abc.def\",\r\n            \"noOfOptionsDisplayed\": 3,\r\n            \"shuffleOptions\": false,\r\n            \"correctOptionId\": \"1\",\r\n            \"options\": [\r\n                {\r\n                    \"id\": \"1\",\r\n                    \"description\": \"this is the first option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"2\",\r\n                    \"description\": \"this is the second option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"3\",\r\n                    \"description\": \"this is the third option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"id\": \"a2\",\r\n            \"description\": \"this is the second question\",\r\n            \"weightage\": 5,\r\n            \"imageUrl\": \"http://abc.def\",\r\n            \"noOfOptionsDisplayed\": 3,\r\n            \"shuffleOptions\": false,\r\n            \"correctOptionId\": \"2\",\r\n            \"options\": [\r\n                {\r\n                    \"id\": \"1\",\r\n                    \"description\": \"this is the first option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"2\",\r\n                    \"description\": \"this is the second option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"3\",\r\n                    \"description\": \"this is the third option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"raw": "{\r\n    \"title\":\"test quiz edited 1\",\r\n    \"description\": \"this is a quiz description\",\r\n    \"tags\": [\"1\",\"2\",\"34\",\"5\"],\r\n    \"shuffleQuestions\": true,\r\n    \"duration\": 1000,\r\n    \"published\": true,\r\n    \"questions\": [\r\n        {\r\n            \"id\": \"a1\",\r\n            \"description\": \"this is the first question\",\r\n            \"weightage\": 5,\r\n            \"imageUrl\": \"http://abc.def\",\r\n            \"noOfOptionsDisplayed\": 3,\r\n            \"shuffleOptions\": false,\r\n            \"correctOptionId\": \"1\",\r\n            \"options\": [\r\n                {\r\n                    \"id\": \"1\",\r\n                    \"description\": \"this is the first option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"2\",\r\n                    \"description\": \"this is the second option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"3\",\r\n                    \"description\": \"this is the third option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"id\": \"a2\",\r\n            \"description\": \"this is the second question\",\r\n            \"weightage\": 5,\r\n            \"imageUrl\": \"http://abc.def\",\r\n            \"noOfOptionsDisplayed\": 3,\r\n            \"shuffleOptions\": false,\r\n            \"correctOptionId\": \"2\",\r\n            \"options\": [\r\n                {\r\n                    \"id\": \"1\",\r\n                    \"description\": \"this is the first option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"2\",\r\n                    \"description\": \"this is the second option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"3\",\r\n                    \"description\": \"this is the third option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1460,7 +1584,7 @@
 								},
 								{
 									"key": "RateLimit-Reset",
-									"value": "541"
+									"value": "469"
 								},
 								{
 									"key": "Content-Type",
@@ -1468,15 +1592,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "1146"
+									"value": "1177"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"47a-BMfsB8TcSaK3tPlfJlIwv90GX/M\""
+									"value": "W/\"499-zsP32vtG77El4LGGD8HZ1prF5z8\""
 								},
 								{
 									"key": "Date",
-									"value": "Wed, 25 Jan 2023 20:33:36 GMT"
+									"value": "Mon, 30 Jan 2023 09:40:34 GMT"
 								},
 								{
 									"key": "Connection",
@@ -1488,7 +1612,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"_id\": \"63d0e6e561162018df93fafa\",\n    \"title\": \"test quiz edited\",\n    \"description\": \"this is a quiz description\",\n    \"user_id\": \"63afe69c073d83832f8a12f5\",\n    \"tags\": [\n        \"1\",\n        \"2\",\n        \"34\",\n        \"5\"\n    ],\n    \"shuffleQuestions\": false,\n    \"duration\": 1000,\n    \"published\": false,\n    \"questions\": [\n        {\n            \"id\": \"a1\",\n            \"description\": \"this is the first question\",\n            \"weightage\": 5,\n            \"imageUrl\": \"http://abc.def\",\n            \"noOfOptionsDisplayed\": 3,\n            \"shuffleOptions\": false,\n            \"correctOptionId\": \"1\",\n            \"options\": [\n                {\n                    \"id\": \"1\",\n                    \"description\": \"this is the first option for a1\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"2\",\n                    \"description\": \"this is the second option for a1\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"3\",\n                    \"description\": \"this is the third option for a1\",\n                    \"imageUrl\": \"http://abc.def\"\n                }\n            ]\n        },\n        {\n            \"id\": \"a2\",\n            \"description\": \"this is the second question\",\n            \"weightage\": 5,\n            \"imageUrl\": \"http://abc.def\",\n            \"noOfOptionsDisplayed\": 3,\n            \"shuffleOptions\": false,\n            \"correctOptionId\": \"2\",\n            \"options\": [\n                {\n                    \"id\": \"1\",\n                    \"description\": \"this is the first option for a2\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"2\",\n                    \"description\": \"this is the second option for a2\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"3\",\n                    \"description\": \"this is the third option for a2\",\n                    \"imageUrl\": \"http://abc.def\"\n                }\n            ]\n        }\n    ],\n    \"__v\": 0,\n    \"fullMarks\": 10\n}"
+							"body": "{\n    \"_id\": \"63d0e6e561162018df93fafa\",\n    \"title\": \"test quiz edited 1\",\n    \"description\": \"this is a quiz description\",\n    \"tags\": [\n        \"1\",\n        \"2\",\n        \"34\",\n        \"5\"\n    ],\n    \"shuffleQuestions\": true,\n    \"duration\": 1000,\n    \"published\": true,\n    \"questions\": [\n        {\n            \"id\": \"a1\",\n            \"description\": \"this is the first question\",\n            \"weightage\": 5,\n            \"imageUrl\": \"http://abc.def\",\n            \"noOfOptionsDisplayed\": 3,\n            \"shuffleOptions\": false,\n            \"correctOptionId\": \"1\",\n            \"options\": [\n                {\n                    \"id\": \"1\",\n                    \"description\": \"this is the first option for a1\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"2\",\n                    \"description\": \"this is the second option for a1\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"3\",\n                    \"description\": \"this is the third option for a1\",\n                    \"imageUrl\": \"http://abc.def\"\n                }\n            ]\n        },\n        {\n            \"id\": \"a2\",\n            \"description\": \"this is the second question\",\n            \"weightage\": 5,\n            \"imageUrl\": \"http://abc.def\",\n            \"noOfOptionsDisplayed\": 3,\n            \"shuffleOptions\": false,\n            \"correctOptionId\": \"2\",\n            \"options\": [\n                {\n                    \"id\": \"1\",\n                    \"description\": \"this is the first option for a2\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"2\",\n                    \"description\": \"this is the second option for a2\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"3\",\n                    \"description\": \"this is the third option for a2\",\n                    \"imageUrl\": \"http://abc.def\"\n                }\n            ]\n        }\n    ],\n    \"__v\": 0,\n    \"userId\": \"63afe69c073d83832f8a12f5\",\n    \"fullMarks\": 10,\n    \"id\": \"63d0e6e561162018df93fafa\"\n}"
 						},
 						{
 							"name": "Not found",
@@ -1497,7 +1621,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"title\":\"test quiz edited 2\",\r\n    \"description\": \"this is a quiz description\",\r\n    \"tags\": [\"1\",\"2\",\"34\",\"5\"],\r\n    \"shuffleQuestions\": false,\r\n    \"duration\": 1000,\r\n    \"published\": false,\r\n    \"questions\": [\r\n        {\r\n            \"id\": \"a1\",\r\n            \"description\": \"this is the first question\",\r\n            \"weightage\": 5,\r\n            \"imageUrl\": \"http://abc.def\",\r\n            \"noOfOptionsDisplayed\": 3,\r\n            \"shuffleOptions\": false,\r\n            \"correctOptionId\": \"1\",\r\n            \"options\": [\r\n                {\r\n                    \"id\": \"1\",\r\n                    \"description\": \"this is the first option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"2\",\r\n                    \"description\": \"this is the second option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"3\",\r\n                    \"description\": \"this is the third option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"id\": \"a2\",\r\n            \"description\": \"this is the second question\",\r\n            \"weightage\": 5,\r\n            \"imageUrl\": \"http://abc.def\",\r\n            \"noOfOptionsDisplayed\": 3,\r\n            \"shuffleOptions\": false,\r\n            \"correctOptionId\": \"2\",\r\n            \"options\": [\r\n                {\r\n                    \"id\": \"1\",\r\n                    \"description\": \"this is the first option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"2\",\r\n                    \"description\": \"this is the second option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"3\",\r\n                    \"description\": \"this is the third option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"raw": "{\r\n    \"title\":\"test quiz edited 1\",\r\n    \"description\": \"this is a quiz description\",\r\n    \"tags\": [\"1\",\"2\",\"34\",\"5\"],\r\n    \"shuffleQuestions\": true,\r\n    \"duration\": 1000,\r\n    \"published\": true,\r\n    \"questions\": [\r\n        {\r\n            \"id\": \"a1\",\r\n            \"description\": \"this is the first question\",\r\n            \"weightage\": 5,\r\n            \"imageUrl\": \"http://abc.def\",\r\n            \"noOfOptionsDisplayed\": 3,\r\n            \"shuffleOptions\": false,\r\n            \"correctOptionId\": \"1\",\r\n            \"options\": [\r\n                {\r\n                    \"id\": \"1\",\r\n                    \"description\": \"this is the first option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"2\",\r\n                    \"description\": \"this is the second option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"3\",\r\n                    \"description\": \"this is the third option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"id\": \"a2\",\r\n            \"description\": \"this is the second question\",\r\n            \"weightage\": 5,\r\n            \"imageUrl\": \"http://abc.def\",\r\n            \"noOfOptionsDisplayed\": 3,\r\n            \"shuffleOptions\": false,\r\n            \"correctOptionId\": \"2\",\r\n            \"options\": [\r\n                {\r\n                    \"id\": \"1\",\r\n                    \"description\": \"this is the first option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"2\",\r\n                    \"description\": \"this is the second option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"3\",\r\n                    \"description\": \"this is the third option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1584,7 +1708,7 @@
 								},
 								{
 									"key": "RateLimit-Reset",
-									"value": "523"
+									"value": "130"
 								},
 								{
 									"key": "Content-Type",
@@ -1592,15 +1716,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "241"
+									"value": "240"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"f1-9wWxeFZz3A6BupwMtafNicMQ7c8\""
+									"value": "W/\"f0-BUlenMsi5QIIBOEV8DE0t7PNJ8s\""
 								},
 								{
 									"key": "Date",
-									"value": "Wed, 25 Jan 2023 20:33:54 GMT"
+									"value": "Mon, 30 Jan 2023 07:47:20 GMT"
 								},
 								{
 									"key": "Connection",
@@ -1612,7 +1736,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"error\": {\n        \"message\": \"Quiz not found\",\n        \"stack\": \"Error: Quiz not found\\n    at D:\\\\WebProjects\\\\quiz\\\\backend\\\\controllers\\\\quizController.js:100:11\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\",\n        \"type\": 0,\n        \"code\": 0\n    }\n}"
+							"body": "{\n    \"error\": {\n        \"message\": \"Quiz not found\",\n        \"stack\": \"Error: Quiz not found\\n    at D:\\\\WebProjects\\\\quiz\\\\backend\\\\controllers\\\\quizController.js:99:11\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\",\n        \"type\": 0,\n        \"code\": 0\n    }\n}"
 						},
 						{
 							"name": "Forbidden (After publishing)",
@@ -1621,7 +1745,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"title\":\"test quiz edited 1\",\r\n    \"description\": \"this is a quiz description\",\r\n    \"tags\": [\"1\",\"2\",\"34\",\"5\"],\r\n    \"shuffleQuestions\": false,\r\n    \"duration\": 1000,\r\n    \"published\": true,\r\n    \"questions\": [\r\n        {\r\n            \"id\": \"a1\",\r\n            \"description\": \"this is the first question\",\r\n            \"weightage\": 5,\r\n            \"imageUrl\": \"http://abc.def\",\r\n            \"noOfOptionsDisplayed\": 3,\r\n            \"shuffleOptions\": false,\r\n            \"correctOptionId\": \"1\",\r\n            \"options\": [\r\n                {\r\n                    \"id\": \"1\",\r\n                    \"description\": \"this is the first option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"2\",\r\n                    \"description\": \"this is the second option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"3\",\r\n                    \"description\": \"this is the third option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"id\": \"a2\",\r\n            \"description\": \"this is the second question\",\r\n            \"weightage\": 5,\r\n            \"imageUrl\": \"http://abc.def\",\r\n            \"noOfOptionsDisplayed\": 3,\r\n            \"shuffleOptions\": false,\r\n            \"correctOptionId\": \"2\",\r\n            \"options\": [\r\n                {\r\n                    \"id\": \"1\",\r\n                    \"description\": \"this is the first option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"2\",\r\n                    \"description\": \"this is the second option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"3\",\r\n                    \"description\": \"this is the third option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"raw": "{\r\n    \"title\":\"test quiz edited 1\",\r\n    \"description\": \"this is a quiz description\",\r\n    \"tags\": [\"1\",\"2\",\"34\",\"5\"],\r\n    \"shuffleQuestions\": true,\r\n    \"duration\": 1000,\r\n    \"published\": true,\r\n    \"questions\": [\r\n        {\r\n            \"id\": \"a1\",\r\n            \"description\": \"this is the first question\",\r\n            \"weightage\": 5,\r\n            \"imageUrl\": \"http://abc.def\",\r\n            \"noOfOptionsDisplayed\": 3,\r\n            \"shuffleOptions\": false,\r\n            \"correctOptionId\": \"1\",\r\n            \"options\": [\r\n                {\r\n                    \"id\": \"1\",\r\n                    \"description\": \"this is the first option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"2\",\r\n                    \"description\": \"this is the second option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"3\",\r\n                    \"description\": \"this is the third option for a1\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"id\": \"a2\",\r\n            \"description\": \"this is the second question\",\r\n            \"weightage\": 5,\r\n            \"imageUrl\": \"http://abc.def\",\r\n            \"noOfOptionsDisplayed\": 3,\r\n            \"shuffleOptions\": false,\r\n            \"correctOptionId\": \"2\",\r\n            \"options\": [\r\n                {\r\n                    \"id\": \"1\",\r\n                    \"description\": \"this is the first option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"2\",\r\n                    \"description\": \"this is the second option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                },\r\n                {\r\n                    \"id\": \"3\",\r\n                    \"description\": \"this is the third option for a2\",\r\n                    \"imageUrl\": \"http://abc.def\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1708,7 +1832,7 @@
 								},
 								{
 									"key": "RateLimit-Reset",
-									"value": "418"
+									"value": "103"
 								},
 								{
 									"key": "Content-Type",
@@ -1720,11 +1844,11 @@
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"11b-O6fS6Yl6ZVcF8z4XTp3BnUyNDNQ\""
+									"value": "W/\"11b-NIsqZwO1M86WgR1s+HFD9/It+zI\""
 								},
 								{
 									"key": "Date",
-									"value": "Thu, 26 Jan 2023 19:30:29 GMT"
+									"value": "Mon, 30 Jan 2023 07:47:47 GMT"
 								},
 								{
 									"key": "Connection",
@@ -1736,7 +1860,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"error\": {\n        \"message\": \"Quiz cannot edited after publishing\",\n        \"stack\": \"Error: Quiz cannot edited after publishing\\n    at D:\\\\WebProjects\\\\quiz\\\\backend\\\\controllers\\\\quizController.js:101:11\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\",\n        \"type\": 0,\n        \"code\": 0\n    }\n}"
+							"body": "{\n    \"error\": {\n        \"message\": \"Quiz cannot edited after publishing\",\n        \"stack\": \"Error: Quiz cannot edited after publishing\\n    at D:\\\\WebProjects\\\\quiz\\\\backend\\\\controllers\\\\quizController.js:103:11\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\",\n        \"type\": 0,\n        \"code\": 0\n    }\n}"
 						}
 					]
 				},
@@ -2206,7 +2330,7 @@
 								},
 								{
 									"key": "RateLimit-Reset",
-									"value": "233"
+									"value": "597"
 								},
 								{
 									"key": "Content-Type",
@@ -2214,15 +2338,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "1122"
+									"value": "1145"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"462-ldQyNt7prMI8Ap82mC6sQMzCjuE\""
+									"value": "W/\"479-c1rJ3yE7WPJGxJlPhWYQuU3+T2I\""
 								},
 								{
 									"key": "Date",
-									"value": "Thu, 26 Jan 2023 21:10:06 GMT"
+									"value": "Mon, 30 Jan 2023 07:49:33 GMT"
 								},
 								{
 									"key": "Connection",
@@ -2234,7 +2358,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"_id\": \"63d0e6e561162018df93fafa\",\n    \"title\": \"test quiz edited\",\n    \"description\": \"this is a quiz description\",\n    \"user_id\": \"63afe69c073d83832f8a12f5\",\n    \"tags\": [\n        \"1\",\n        \"2\",\n        \"34\",\n        \"5\"\n    ],\n    \"shuffleQuestions\": false,\n    \"duration\": 1000,\n    \"published\": true,\n    \"questions\": [\n        {\n            \"id\": \"a1\",\n            \"description\": \"this is the first question\",\n            \"weightage\": 5,\n            \"imageUrl\": \"http://abc.def\",\n            \"noOfOptionsDisplayed\": 3,\n            \"shuffleOptions\": true,\n            \"options\": [\n                {\n                    \"id\": \"3\",\n                    \"description\": \"this is the third option for a1\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"2\",\n                    \"description\": \"this is the second option for a1\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"1\",\n                    \"description\": \"this is the first option for a1\",\n                    \"imageUrl\": \"http://abc.def\"\n                }\n            ]\n        },\n        {\n            \"id\": \"a2\",\n            \"description\": \"this is the second question\",\n            \"weightage\": 5,\n            \"imageUrl\": \"http://abc.def\",\n            \"noOfOptionsDisplayed\": 3,\n            \"shuffleOptions\": false,\n            \"correctOptionId\": \"2\",\n            \"options\": [\n                {\n                    \"id\": \"1\",\n                    \"description\": \"this is the first option for a2\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"2\",\n                    \"description\": \"this is the second option for a2\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"3\",\n                    \"description\": \"this is the third option for a2\",\n                    \"imageUrl\": \"http://abc.def\"\n                }\n            ]\n        }\n    ],\n    \"__v\": 0,\n    \"fullMarks\": 10\n}"
+							"body": "{\n    \"_id\": \"63d0e6e561162018df93fafa\",\n    \"title\": \"test quiz edited 1\",\n    \"description\": \"this is a quiz description\",\n    \"tags\": [\n        \"1\",\n        \"2\",\n        \"34\",\n        \"5\"\n    ],\n    \"shuffleQuestions\": true,\n    \"duration\": 1000,\n    \"published\": true,\n    \"questions\": [\n        {\n            \"id\": \"a1\",\n            \"description\": \"this is the first question\",\n            \"weightage\": 5,\n            \"imageUrl\": \"http://abc.def\",\n            \"noOfOptionsDisplayed\": 3,\n            \"shuffleOptions\": false,\n            \"correctOptionId\": \"1\",\n            \"options\": [\n                {\n                    \"id\": \"1\",\n                    \"description\": \"this is the first option for a1\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"2\",\n                    \"description\": \"this is the second option for a1\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"3\",\n                    \"description\": \"this is the third option for a1\",\n                    \"imageUrl\": \"http://abc.def\"\n                }\n            ]\n        },\n        {\n            \"id\": \"a2\",\n            \"description\": \"this is the second question\",\n            \"weightage\": 5,\n            \"imageUrl\": \"http://abc.def\",\n            \"noOfOptionsDisplayed\": 3,\n            \"shuffleOptions\": false,\n            \"correctOptionId\": \"2\",\n            \"options\": [\n                {\n                    \"id\": \"1\",\n                    \"description\": \"this is the first option for a2\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"2\",\n                    \"description\": \"this is the second option for a2\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"3\",\n                    \"description\": \"this is the third option for a2\",\n                    \"imageUrl\": \"http://abc.def\"\n                }\n            ]\n        }\n    ],\n    \"__v\": 0,\n    \"userId\": \"63afe69c073d83832f8a12f5\",\n    \"fullMarks\": 10\n}"
 						},
 						{
 							"name": "Not found",

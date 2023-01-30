@@ -21,8 +21,7 @@ const createQuiz = asyncHandler(async (req, res, next) => {
     throw new ErrorResponse("Something went wrong", StatusCodes.BAD_REQUEST);
   }
 
-  const fullMarks = quiz.questions.reduce((acc, q) => acc + q.weightage, 0);
-  const response = { ...quiz.toJSON(), fullMarks };
+  const response = quiz.toJSON();
 
   res.status(StatusCodes.CREATED).json(response);
 });
@@ -43,12 +42,7 @@ const getQuizzes = asyncHandler(async (req, res, next) => {
     skip: PAGE * PAGINATION_LIMIT,
     limit: PAGINATION_LIMIT,
     total: await Quiz.find({ userId: req.user.id }).count(),
-    quizzes: quizzes.map((quiz) => {
-      const fullMarks = quiz
-        .toJSON()
-        .questions.reduce((acc, q) => acc + q.weightage, 0);
-      return { ...quiz.toJSON(), fullMarks };
-    }),
+    quizzes: quizzes.map((quiz) => quiz.toJSON()),
   };
 
   res.status(StatusCodes.OK).json(response);
@@ -69,8 +63,7 @@ const getQuiz = asyncHandler(async (req, res, next) => {
     throw new ErrorResponse("Quiz not found", StatusCodes.NOT_FOUND);
   }
 
-  const fullMarks = quiz.questions.reduce((acc, q) => acc + q.weightage, 0);
-  const response = { ...quiz.toJSON(), fullMarks };
+  const response = quiz.toJSON();
 
   res.status(StatusCodes.OK).json(response);
 });
@@ -107,8 +100,7 @@ const editQuiz = asyncHandler(async (req, res, next) => {
     quiz = await Quiz.findOne({ _id: id, userId: req.user.id });
   }
 
-  const fullMarks = quiz.questions.reduce((acc, q) => acc + q.weightage, 0);
-  const response = { ...quiz.toJSON(), fullMarks };
+  const response = quiz.toJSON();
 
   res.status(StatusCodes.OK).json(response);
 });
@@ -171,7 +163,7 @@ const getQuizQuestions = asyncHandler(async (req, res, next) => {
   // shuffle questions
   if (q.shuffleQuestions) q.questions = shuffleArray(q.questions);
 
-  const response = { ...q, fullMarks };
+  const response = { ...q };
 
   res.status(StatusCodes.OK).json(response);
 });

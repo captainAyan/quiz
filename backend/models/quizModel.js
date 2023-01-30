@@ -131,4 +131,11 @@ const quizSchema = new mongoose.Schema({
   ],
 });
 
+quizSchema.set("toObject", { virtuals: true });
+quizSchema.set("toJSON", { virtuals: true });
+
+quizSchema.virtual("fullMarks").get(function () {
+  return this.questions.reduce((acc, q) => acc + q.weightage, 0);
+});
+
 module.exports = mongoose.model("Quiz", quizSchema);
