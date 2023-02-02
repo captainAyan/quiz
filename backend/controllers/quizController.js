@@ -6,6 +6,7 @@ const { ErrorResponse } = require("../middleware/errorMiddleware");
 
 const { schema } = require("../util/quizValidationSchema");
 const shuffleArray = require("../util/shuffleArray");
+const correctAnswerIncludedOptionsSubset = require("../util/correctAnswerIncludedOptionsSubset");
 const { PAGINATION_LIMIT } = require("../constants/policies");
 
 const createQuiz = asyncHandler(async (req, res, next) => {
@@ -149,19 +150,31 @@ const getQuizQuestions = asyncHandler(async (req, res, next) => {
 
   const q = quiz.toJSON();
 
-  const fullMarks = q.questions.reduce((acc, q) => acc + q.weightage, 0);
-
-  // remove correctOptionId from questions and shuffling Options
   q.questions = q.questions.map((question) => {
-    if (question.shuffleOptions) {
-      question.options = shuffleArray(question.options);
-      delete question.correctOptionId;
-    }
+    if (question.shuffleOptions)
+      question.options = correctAnswerIncludedOptionsSubset(
+        shuffleArray(question.options),
+        question.correctOptionId,
+        question.noOfOptionsDisplayed
+      );
+    else
+      question.options = correctAnswerIncludedOptionsSubset(
+        question.options,
+        question.correctOptionId,
+        question.noOfOptionsDisplayed
+      );
+
+    delete question.correctOptionId;
+    delete question.shuffleOptions;
+    delete question.noOfOptionsDisplayed;
     return question;
   });
 
   // shuffle questions
   if (q.shuffleQuestions) q.questions = shuffleArray(q.questions);
+
+  delete q.shuffleQuestions;
+  delete q.published;
 
   const response = { ...q };
 
