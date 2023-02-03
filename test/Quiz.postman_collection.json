@@ -2330,7 +2330,7 @@
 								},
 								{
 									"key": "RateLimit-Reset",
-									"value": "597"
+									"value": "595"
 								},
 								{
 									"key": "Content-Type",
@@ -2338,15 +2338,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "1145"
+									"value": "908"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"479-c1rJ3yE7WPJGxJlPhWYQuU3+T2I\""
+									"value": "W/\"38c-msONlYLOx+AkjW8jS0+Ug6pFfyI\""
 								},
 								{
 									"key": "Date",
-									"value": "Mon, 30 Jan 2023 07:49:33 GMT"
+									"value": "Thu, 02 Feb 2023 20:19:03 GMT"
 								},
 								{
 									"key": "Connection",
@@ -2358,7 +2358,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"_id\": \"63d0e6e561162018df93fafa\",\n    \"title\": \"test quiz edited 1\",\n    \"description\": \"this is a quiz description\",\n    \"tags\": [\n        \"1\",\n        \"2\",\n        \"34\",\n        \"5\"\n    ],\n    \"shuffleQuestions\": true,\n    \"duration\": 1000,\n    \"published\": true,\n    \"questions\": [\n        {\n            \"id\": \"a1\",\n            \"description\": \"this is the first question\",\n            \"weightage\": 5,\n            \"imageUrl\": \"http://abc.def\",\n            \"noOfOptionsDisplayed\": 3,\n            \"shuffleOptions\": false,\n            \"correctOptionId\": \"1\",\n            \"options\": [\n                {\n                    \"id\": \"1\",\n                    \"description\": \"this is the first option for a1\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"2\",\n                    \"description\": \"this is the second option for a1\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"3\",\n                    \"description\": \"this is the third option for a1\",\n                    \"imageUrl\": \"http://abc.def\"\n                }\n            ]\n        },\n        {\n            \"id\": \"a2\",\n            \"description\": \"this is the second question\",\n            \"weightage\": 5,\n            \"imageUrl\": \"http://abc.def\",\n            \"noOfOptionsDisplayed\": 3,\n            \"shuffleOptions\": false,\n            \"correctOptionId\": \"2\",\n            \"options\": [\n                {\n                    \"id\": \"1\",\n                    \"description\": \"this is the first option for a2\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"2\",\n                    \"description\": \"this is the second option for a2\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"3\",\n                    \"description\": \"this is the third option for a2\",\n                    \"imageUrl\": \"http://abc.def\"\n                }\n            ]\n        }\n    ],\n    \"__v\": 0,\n    \"userId\": \"63afe69c073d83832f8a12f5\",\n    \"fullMarks\": 10\n}"
+							"body": "{\n    \"_id\": \"63d0e6e561162018df93fafa\",\n    \"title\": \"test quiz edited 1\",\n    \"description\": \"this is a quiz description\",\n    \"tags\": [\n        \"1\",\n        \"2\",\n        \"34\",\n        \"5\"\n    ],\n    \"duration\": 1000,\n    \"questions\": [\n        {\n            \"id\": \"a1\",\n            \"description\": \"this is the first question\",\n            \"weightage\": 5,\n            \"imageUrl\": \"http://abc.def\",\n            \"options\": [\n                {\n                    \"id\": \"3\",\n                    \"description\": \"this is the third option for a1\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"1\",\n                    \"description\": \"this is the first option for a1\",\n                    \"imageUrl\": \"http://abc.def\"\n                }\n            ]\n        },\n        {\n            \"id\": \"a2\",\n            \"description\": \"this is the second question\",\n            \"weightage\": 5,\n            \"imageUrl\": \"http://abc.def\",\n            \"options\": [\n                {\n                    \"id\": \"1\",\n                    \"description\": \"this is the first option for a2\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"2\",\n                    \"description\": \"this is the second option for a2\",\n                    \"imageUrl\": \"http://abc.def\"\n                },\n                {\n                    \"id\": \"3\",\n                    \"description\": \"this is the third option for a2\",\n                    \"imageUrl\": \"http://abc.def\"\n                }\n            ]\n        }\n    ],\n    \"__v\": 0,\n    \"userId\": \"63afe69c073d83832f8a12f5\",\n    \"fullMarks\": 10,\n    \"id\": \"63d0e6e561162018df93fafa\"\n}"
 						},
 						{
 							"name": "Not found",
@@ -2475,6 +2475,409 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"error\": {\n        \"message\": \"Quiz not found\",\n        \"stack\": \"Error: Quiz not found\\n    at D:\\\\WebProjects\\\\quiz\\\\backend\\\\controllers\\\\quizController.js:155:11\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\",\n        \"type\": 0,\n        \"code\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Post Quiz Answers",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"questionId\": \"a1\",\r\n        \"optionId\": \"3\"\r\n    },\r\n    {\r\n        \"questionId\": \"a2\",\r\n        \"optionId\": \"1\"\r\n    },\r\n    {\r\n        \"questionId\": \"a3\",\r\n        \"optionId\": \"1\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{quiz_uri}}/63d0e6e561162018df93fafa/questions",
+							"host": [
+								"{{quiz_uri}}"
+							],
+							"path": [
+								"63d0e6e561162018df93fafa",
+								"questions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Quiz Taken",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"questionId\": \"a1\",\r\n        \"optionId\": \"3\"\r\n    },\r\n    {\r\n        \"questionId\": \"a2\",\r\n        \"optionId\": \"1\"\r\n    },\r\n    {\r\n        \"questionId\": \"a3\",\r\n        \"optionId\": \"1\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{quiz_uri}}/63d0e6e561162018df93fafa/answers",
+									"host": [
+										"{{quiz_uri}}"
+									],
+									"path": [
+										"63d0e6e561162018df93fafa",
+										"answers"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "false"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "0"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "575"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "249"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f9-KFqvQJYPCsWq7DL2TgLw+dfkLng\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Feb 2023 21:30:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"message\": \"Quiz already taken\",\n        \"stack\": \"Error: Quiz already taken\\n    at D:\\\\WebProjects\\\\quiz\\\\backend\\\\controllers\\\\quizController.js:207:11\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\",\n        \"type\": 0,\n        \"code\": 0\n    }\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"questionId\": \"a1\",\r\n        \"optionId\": \"3\"\r\n    },\r\n    {\r\n        \"questionId\": \"a2\",\r\n        \"optionId\": \"1\"\r\n    },\r\n    {\r\n        \"questionId\": \"a3\",\r\n        \"optionId\": \"1\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{quiz_uri}}/63d0e6e561162018df93fafa/answers",
+									"host": [
+										"{{quiz_uri}}"
+									],
+									"path": [
+										"63d0e6e561162018df93fafa",
+										"answers"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "false"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "0"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "538"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "88"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"58-3Xr5rQUNXVtYgZ2oSIwVhb4M1ts\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Feb 2023 21:31:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"marksObtained\": 5,\n    \"fullMarks\": 10,\n    \"percentage\": 50,\n    \"answerId\": \"63dd7d3140fee61e90f2815d\"\n}"
+						},
+						{
+							"name": "Not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"questionId\": \"a1\",\r\n        \"optionId\": \"3\"\r\n    },\r\n    {\r\n        \"questionId\": \"a2\",\r\n        \"optionId\": \"1\"\r\n    },\r\n    {\r\n        \"questionId\": \"a3\",\r\n        \"optionId\": \"1\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{quiz_uri}}/63d0e6e561162018df93faba/answers",
+									"host": [
+										"{{quiz_uri}}"
+									],
+									"path": [
+										"63d0e6e561162018df93faba",
+										"answers"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "false"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "0"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "524"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "241"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f1-d8CZ1WFPqWCeR+gjG26eKDqyhUs\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Feb 2023 21:31:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"message\": \"Quiz not found\",\n        \"stack\": \"Error: Quiz not found\\n    at D:\\\\WebProjects\\\\quiz\\\\backend\\\\controllers\\\\quizController.js:199:11\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\",\n        \"type\": 0,\n        \"code\": 0\n    }\n}"
 						}
 					]
 				}

@@ -2,12 +2,15 @@ const { StatusCodes } = require("http-status-codes");
 const asyncHandler = require("express-async-handler");
 
 const Quiz = require("../models/quizModel");
+const Answer = require("../models/answerModel");
 const { ErrorResponse } = require("../middleware/errorMiddleware");
 
 const { schema } = require("../util/quizValidationSchema");
+const { schema: answerSchema } = require("../util/answerValidationSchema");
 const shuffleArray = require("../util/shuffleArray");
 const correctAnswerIncludedOptionsSubset = require("../util/correctAnswerIncludedOptionsSubset");
 const { PAGINATION_LIMIT } = require("../constants/policies");
+const answerReportGenerator = require("../util/answerReportGenerator");
 
 const createQuiz = asyncHandler(async (req, res, next) => {
   const { error } = schema.validate(req.body);
@@ -181,6 +184,56 @@ const getQuizQuestions = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(response);
 });
 
+const postQuizAnswers = asyncHandler(async (req, res, next) => {
+  const { id } = req.params;
+  let quiz;
+
+  try {
+    quiz = await Quiz.findOne({ _id: id, published: true });
+  } catch (error) {
+    // for invalid mongodb objectid
+    throw new ErrorResponse("Quiz not found", StatusCodes.NOT_FOUND);
+  }
+
+  if (!quiz) {
+    throw new ErrorResponse("Quiz not found", StatusCodes.NOT_FOUND);
+  }
+
+  const quizTakenDBResult = await Answer.findOne({
+    quizId: quiz.id,
+    userId: req.user.id,
+  });
+  if (quizTakenDBResult) {
+    throw new ErrorResponse("Quiz already taken", StatusCodes.FORBIDDEN);
+  }
+
+  const { error } = answerSchema.validate(req.body);
+
+  if (error) {
+    throw new ErrorResponse(error.details[0].message, StatusCodes.BAD_REQUEST);
+  }
+
+  const { report, validAnswers } = answerReportGenerator(
+    quiz.toJSON(),
+    req.body
+  );
+
+  const answerResult = await Answer.create({
+    quizId: quiz.id,
+    userId: req.user.id,
+    marksObtained: report.marksObtained,
+    answers: validAnswers,
+  });
+
+  if (!answerResult) {
+    throw new ErrorResponse("Something went wrong", StatusCodes.BAD_REQUEST);
+  }
+
+  report.answerId = answerResult.id;
+
+  res.status(StatusCodes.OK).json(report);
+});
+
 module.exports = {
   createQuiz,
   getQuizzes,
@@ -188,4 +241,5 @@ module.exports = {
   editQuiz,
   deleteQuiz,
   getQuizQuestions,
+  postQuizAnswers,
 };
