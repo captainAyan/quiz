@@ -66,12 +66,22 @@ const register = asyncHandler(async (req, res, next) => {
 });
 
 const getProfile = asyncHandler(async (req, res, next) => {
-  const response = {
-    id: req.user.id,
-    firstName: req.user.firstName,
-    lastName: req.user.lastName,
-    email: req.user.email,
-  };
+  const { id } = req.params;
+  let user;
+
+  try {
+    user = await User.findOne({ _id: id });
+  } catch (error) {
+    // for invalid mongodb objectid
+    throw new ErrorResponse("User not found", StatusCodes.NOT_FOUND);
+  }
+
+  if (!user) {
+    throw new ErrorResponse("User not found", StatusCodes.NOT_FOUND);
+  }
+
+  const response = user.toJSON();
+  delete response.password;
 
   res.status(StatusCodes.OK).json(response);
 });
@@ -82,14 +92,24 @@ const editProfile = asyncHandler(async (req, res, next) => {
   if (error) {
     throw new ErrorResponse(error.details[0].message, StatusCodes.BAD_REQUEST);
   }
+
   const { firstName, lastName, email } = req.body;
+  let user;
 
-  const user = await User.findById(req.user.id).select("-password");
+  try {
+    user = await User.findOne({ _id: req.user.id });
+  } catch (error) {
+    // for invalid mongodb objectid
+    throw new ErrorResponse("User not found", StatusCodes.NOT_FOUND);
+  }
 
-  const userWithEmailExists = await User.findOne({ email });
+  console.log(user.email, email);
 
-  if (user.email !== email && userWithEmailExists) {
-    throw new ErrorResponse("Email is taken", StatusCodes.BAD_REQUEST);
+  if (user.email !== email) {
+    const userWithEmailExists = await User.findOne({ email });
+
+    if (userWithEmailExists)
+      throw new ErrorResponse("Email is taken", StatusCodes.BAD_REQUEST);
   }
 
   user.firstName = firstName;
@@ -98,22 +118,10 @@ const editProfile = asyncHandler(async (req, res, next) => {
 
   await user.save();
 
-  const response = {
-    id: user.id,
-    firstName: user.firstName,
-    lastName: user.lastName,
-    email: user.email,
-  };
+  const response = user.toJSON();
+  delete response.password;
 
   res.status(StatusCodes.OK).json(response);
 });
 
-const deleteProfile = asyncHandler(async (req, res, next) => {
-  await User.deleteOne({ _id: req.user.id });
-
-  res.status(StatusCodes.OK).json({
-    id: req.user.id,
-  });
-});
-
-module.exports = { login, register, getProfile, editProfile, deleteProfile };
+module.exports = { login, register, getProfile, editProfile };
