@@ -38,10 +38,6 @@ const getQuizzes = asyncHandler(async (req, res, next) => {
     .skip(PAGE * PAGINATION_LIMIT)
     .limit(PAGINATION_LIMIT);
 
-  if (!quizzes) {
-    throw new ErrorResponse("Something went wrong", StatusCodes.BAD_REQUEST);
-  }
-
   const response = {
     skip: PAGE * PAGINATION_LIMIT,
     limit: PAGINATION_LIMIT,
