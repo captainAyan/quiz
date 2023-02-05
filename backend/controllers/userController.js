@@ -18,12 +18,8 @@ const login = asyncHandler(async (req, res, next) => {
   const user = await User.findOne({ email });
 
   if (user && (await bcrypt.compare(password, user.password))) {
-    const response = {
-      id: user.id,
-      firstName: user.firstName,
-      lastName: user.lastName,
-      email: user.email,
-    };
+    const response = user.toJSON();
+    delete response.password;
 
     res.status(StatusCodes.OK).json({
       ...response,
@@ -60,12 +56,8 @@ const register = asyncHandler(async (req, res, next) => {
     throw new ErrorResponse("Invalid input error", StatusCodes.BAD_REQUEST);
   }
 
-  const response = {
-    id: user.id,
-    firstName: user.firstName,
-    lastName: user.lastName,
-    email: user.email,
-  };
+  const response = user.toJSON();
+  delete response.password;
 
   res.status(StatusCodes.CREATED).json({
     ...response,

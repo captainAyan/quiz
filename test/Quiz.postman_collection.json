@@ -52,7 +52,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"firstName\": \"lorem\",\r\n  \"lastName\": \"ipsum\",\r\n  \"email\": \"loremipsum@mail.com\",\r\n  \"password\": \"loremipsumpassword\"\r\n}"
+							"raw": "{\r\n  \"firstName\": \"ayan\",\r\n  \"lastName\": \"chakraborty\",\r\n  \"email\": \"ayanchakraborty@mail.com\",\r\n  \"password\": \"ayanchakrabortypassword\"\r\n}"
 						},
 						"url": {
 							"raw": "{{auth_url}}/register",
@@ -72,19 +72,13 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
 										"value": "application/json",
-										"type": "text"
+										"type": "default"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"firstName\": \"john\",\r\n  \"lastName\": \"doe\",\r\n  \"email\": \"johndoe@mail.com\",\r\n  \"password\": \"johndoepassword\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
+									"raw": "{\r\n  \"firstName\": \"ayan\",\r\n  \"lastName\": \"chakraborty\",\r\n  \"email\": \"ayanchakraborty@mail.com\",\r\n  \"password\": \"ayanchakrabortypassword\"\r\n}"
 								},
 								"url": {
 									"raw": "{{auth_url}}/register",
@@ -166,7 +160,7 @@
 								},
 								{
 									"key": "RateLimit-Reset",
-									"value": "136"
+									"value": "593"
 								},
 								{
 									"key": "Content-Type",
@@ -174,15 +168,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "278"
+									"value": "335"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"116-4wsmt4Z4boBJJNImHqYYyN/qTBM\""
+									"value": "W/\"14f-hzWIM1u0fwo0FCs032kOQXRMflw\""
 								},
 								{
 									"key": "Date",
-									"value": "Sat, 31 Dec 2022 07:37:00 GMT"
+									"value": "Sun, 05 Feb 2023 08:11:21 GMT"
 								},
 								{
 									"key": "Connection",
@@ -194,7 +188,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"id\": \"63afe69c073d83832f8a12f5\",\n    \"firstName\": \"john\",\n    \"lastName\": \"doe\",\n    \"email\": \"johndoe@mail.com\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYWZlNjljMDczZDgzODMyZjhhMTJmNSIsImlhdCI6MTY3MjQ3MjIyMCwiZXhwIjoxNjc1MDY0MjIwfQ.TAhcsMzij6wm9lqYx2crzvqmWKsu2XRCsIPL4Clh_y8\"\n}"
+							"body": "{\n    \"firstName\": \"ayan\",\n    \"lastName\": \"chakraborty\",\n    \"email\": \"ayanchakraborty@mail.com\",\n    \"_id\": \"63df64a99f2c30d1f0f32fc7\",\n    \"__v\": 0,\n    \"id\": \"63df64a99f2c30d1f0f32fc7\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGY2NGE5OWYyYzMwZDFmMGYzMmZjNyIsImlhdCI6MTY3NTU4NDY4MSwiZXhwIjoxNjc4MTc2NjgxfQ.vqH898IHmfSq-mVg7FJ9vCHApypEX98mlxH1gC1sPo8\"\n}"
 						},
 						{
 							"name": "Email already exists",
@@ -612,7 +606,7 @@
 								},
 								{
 									"key": "RateLimit-Reset",
-									"value": "553"
+									"value": "591"
 								},
 								{
 									"key": "Content-Type",
@@ -620,15 +614,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "278"
+									"value": "319"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"116-pBb8e3o276fuePUjG4BqSjtsrEI\""
+									"value": "W/\"13f-Zt4pgWIShCXfs7EdZfSngVEIQW0\""
 								},
 								{
 									"key": "Date",
-									"value": "Mon, 02 Jan 2023 05:53:57 GMT"
+									"value": "Sun, 05 Feb 2023 08:13:11 GMT"
 								},
 								{
 									"key": "Connection",
@@ -640,7 +634,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"id\": \"63afe69c073d83832f8a12f5\",\n    \"firstName\": \"john\",\n    \"lastName\": \"doe\",\n    \"email\": \"johndoe@mail.com\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYWZlNjljMDczZDgzODMyZjhhMTJmNSIsImlhdCI6MTY3MjYzODgzNywiZXhwIjoxNjc1MjMwODM3fQ.YxFDs-sZGP6kTNKJGV73eIW49MnnIQdMizSMb2FHT9M\"\n}"
+							"body": "{\n    \"_id\": \"63afe69c073d83832f8a12f5\",\n    \"firstName\": \"john\",\n    \"lastName\": \"doe\",\n    \"email\": \"johndoe@mail.com\",\n    \"__v\": 0,\n    \"id\": \"63afe69c073d83832f8a12f5\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYWZlNjljMDczZDgzODMyZjhhMTJmNSIsImlhdCI6MTY3NTU4NDc5MSwiZXhwIjoxNjc4MTc2NzkxfQ.xtPQa6nIjwYJGc9tK6II8bxdM357TSX6eyLVGYhDKLg\"\n}"
 						},
 						{
 							"name": "Invalid credentials",
