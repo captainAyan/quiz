@@ -2772,142 +2772,17 @@
 							}
 						},
 						"url": {
-							"raw": "{{quiz_uri}}/63d0e6e561162018df93fafa/questions",
+							"raw": "{{quiz_uri}}/63d0e6e561162018df93fafa/answers",
 							"host": [
 								"{{quiz_uri}}"
 							],
 							"path": [
 								"63d0e6e561162018df93fafa",
-								"questions"
+								"answers"
 							]
 						}
 					},
 					"response": [
-						{
-							"name": "Quiz Taken",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "[\r\n    {\r\n        \"questionId\": \"a1\",\r\n        \"optionId\": \"3\"\r\n    },\r\n    {\r\n        \"questionId\": \"a2\",\r\n        \"optionId\": \"1\"\r\n    },\r\n    {\r\n        \"questionId\": \"a3\",\r\n        \"optionId\": \"1\"\r\n    }\r\n]",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{quiz_uri}}/63d0e6e561162018df93fafa/answers",
-									"host": [
-										"{{quiz_uri}}"
-									],
-									"path": [
-										"63d0e6e561162018df93fafa",
-										"answers"
-									]
-								}
-							},
-							"status": "Forbidden",
-							"code": 403,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
-								},
-								{
-									"key": "Cross-Origin-Embedder-Policy",
-									"value": "require-corp"
-								},
-								{
-									"key": "Cross-Origin-Opener-Policy",
-									"value": "same-origin"
-								},
-								{
-									"key": "Cross-Origin-Resource-Policy",
-									"value": "same-origin"
-								},
-								{
-									"key": "X-DNS-Prefetch-Control",
-									"value": "off"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains"
-								},
-								{
-									"key": "X-Download-Options",
-									"value": "noopen"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Origin-Agent-Cluster",
-									"value": "?1"
-								},
-								{
-									"key": "X-Permitted-Cross-Domain-Policies",
-									"value": "none"
-								},
-								{
-									"key": "Referrer-Policy",
-									"value": "no-referrer"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "0"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "RateLimit-Limit",
-									"value": "false"
-								},
-								{
-									"key": "RateLimit-Remaining",
-									"value": "0"
-								},
-								{
-									"key": "RateLimit-Reset",
-									"value": "575"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "249"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"f9-KFqvQJYPCsWq7DL2TgLw+dfkLng\""
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 03 Feb 2023 21:30:51 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"error\": {\n        \"message\": \"Quiz already taken\",\n        \"stack\": \"Error: Quiz already taken\\n    at D:\\\\WebProjects\\\\quiz\\\\backend\\\\controllers\\\\quizController.js:207:11\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\",\n        \"type\": 0,\n        \"code\": 0\n    }\n}"
-						},
 						{
 							"name": "Success",
 							"originalRequest": {
@@ -3032,6 +2907,131 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"marksObtained\": 5,\n    \"fullMarks\": 10,\n    \"percentage\": 50,\n    \"answerId\": \"63dd7d3140fee61e90f2815d\"\n}"
+						},
+						{
+							"name": "Quiz Taken",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"questionId\": \"a1\",\r\n        \"optionId\": \"3\"\r\n    },\r\n    {\r\n        \"questionId\": \"a2\",\r\n        \"optionId\": \"1\"\r\n    },\r\n    {\r\n        \"questionId\": \"a3\",\r\n        \"optionId\": \"1\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{quiz_uri}}/63d0e6e561162018df93fafa/answers",
+									"host": [
+										"{{quiz_uri}}"
+									],
+									"path": [
+										"63d0e6e561162018df93fafa",
+										"answers"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "false"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "0"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "575"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "249"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f9-KFqvQJYPCsWq7DL2TgLw+dfkLng\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Feb 2023 21:30:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"message\": \"Quiz already taken\",\n        \"stack\": \"Error: Quiz already taken\\n    at D:\\\\WebProjects\\\\quiz\\\\backend\\\\controllers\\\\quizController.js:207:11\\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\",\n        \"type\": 0,\n        \"code\": 0\n    }\n}"
 						},
 						{
 							"name": "Not found",
