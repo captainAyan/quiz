@@ -9,6 +9,7 @@ const {
   deleteQuiz,
   getQuizQuestions,
   postQuizAnswers,
+  getQuizAnswers,
 } = require("../../controllers/quizController.js");
 const { protect } = require("../../middleware/authMiddleware");
 
@@ -19,5 +20,6 @@ router.put("/:id", protect, editQuiz);
 router.delete("/:id", protect, deleteQuiz);
 router.get("/:id/questions", protect, getQuizQuestions);
 router.post("/:id/answers", protect, postQuizAnswers);
+router.get("/:id/answers", protect, getQuizAnswers);
 
 module.exports = router;

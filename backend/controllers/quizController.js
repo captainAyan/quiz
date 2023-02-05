@@ -230,6 +230,44 @@ const postQuizAnswers = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(report);
 });
 
+const getQuizAnswers = asyncHandler(async (req, res, next) => {
+  const PAGE =
+    parseInt(req.query.page, 10) > 0 ? parseInt(req.query.page, 10) : 0;
+
+  const { id: quizId } = req.params;
+  let quiz;
+
+  try {
+    quiz = await Quiz.findOne({ _id: quizId, userId: req.user.id });
+  } catch (error) {
+    // for invalid mongodb objectid
+    throw new ErrorResponse("Quiz not found", StatusCodes.NOT_FOUND);
+  }
+
+  if (!quiz) {
+    throw new ErrorResponse("Quiz not found", StatusCodes.NOT_FOUND);
+  }
+
+  const answers = await Answer.find({ quizId })
+    .skip(PAGE * PAGINATION_LIMIT)
+    .limit(PAGINATION_LIMIT)
+    .populate("userId", "-password");
+
+  const response = {
+    skip: PAGE * PAGINATION_LIMIT,
+    limit: PAGINATION_LIMIT,
+    total: await Answer.find({ quizId }).count(),
+    answers: answers.map((answer) => {
+      answer = answer.toJSON();
+      answer.user = answer.userId;
+      delete answer.userId;
+      return answer;
+    }),
+  };
+
+  res.status(StatusCodes.OK).json(response);
+});
+
 module.exports = {
   createQuiz,
   getQuizzes,
@@ -238,4 +276,5 @@ module.exports = {
   deleteQuiz,
   getQuizQuestions,
   postQuizAnswers,
+  getQuizAnswers,
 };
