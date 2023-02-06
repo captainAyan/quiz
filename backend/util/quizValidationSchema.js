@@ -32,7 +32,20 @@ const schema = Joi.object({
           .min(1)
           .max(QUESTION_DESCRIPTION_MAX_LENGTH)
           .required(),
-        weightage: Joi.number().integer().min(1).required(),
+        weightage: Joi.number().integer().positive().min(1).required(),
+        negativeMark: Joi.number()
+          .positive()
+          .required()
+          .custom((value, helpers) => {
+            const { weightage } = helpers.state.ancestors[0]; // question options
+
+            if (value > weightage)
+              return helpers.message(
+                '"negativeMark" cannot be more than "weightage".'
+              );
+
+            return Number(parseFloat(value).toFixed(2));
+          }),
         imageUrl: Joi.string()
           .uri()
           .min(0)

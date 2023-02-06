@@ -33,9 +33,7 @@ const answerSchema = new mongoose.Schema(
         },
         optionId: {
           type: String,
-          required: true,
           trim: true,
-          minlength: 1,
           maxlength: OPTION_ID_MAX_LENGTH,
         },
       },

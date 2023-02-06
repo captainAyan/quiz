@@ -4,8 +4,12 @@ module.exports = (quiz, answers) => {
   const validAnswers = quiz.questions.map((question) => {
     const answer = answers.find((ans) => ans.questionId === question.id);
 
-    marksObtained +=
-      question.correctOptionId === answer.optionId ? question.weightage : 0;
+    if (answer.optionId !== "")
+      // for unattempted questions
+      marksObtained +=
+        question.correctOptionId === answer.optionId
+          ? question.weightage
+          : -question.negativeMark;
 
     return answer;
   });

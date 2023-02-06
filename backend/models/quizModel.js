@@ -79,6 +79,10 @@ const quizSchema = new mongoose.Schema(
           required: true,
           min: 1,
         },
+        negativeMark: {
+          type: Number,
+          required: true,
+        },
         imageUrl: {
           type: String,
           required: true,
