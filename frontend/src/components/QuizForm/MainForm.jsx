@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Formik, Field, Form } from "formik";
+import { Formik, Field, Form, FieldArray } from "formik";
 import QuestionForm from "./QuestionForm";
 
 export default function MainForm({ data }) {
@@ -34,6 +34,7 @@ export default function MainForm({ data }) {
                 id="duration"
                 name="duration"
                 placeholder="Duration"
+                step="60000"
               />
               <span>
                 {(() => {
@@ -93,14 +94,204 @@ export default function MainForm({ data }) {
 
               <h3>Questions</h3>
 
-              <div>
-                {values.questions.map((question, i) => (
-                  <QuestionForm question={question} key={i} />
-                ))}
-              </div>
+              <FieldArray
+                name="questions"
+                render={(questionsArrayHelpers) => (
+                  <div>
+                    {values.questions.map((question, questionIndex) => (
+                      <fieldset key={`question_${questionIndex}`}>
+                        <legend>Question</legend>
+                        <label htmlFor={`id[${questionIndex}]`}>Id</label>
+                        <Field
+                          type="text"
+                          id={`id[${questionIndex}]`}
+                          name={`questions[${questionIndex}].id`}
+                          placeholder="Id"
+                        />
+
+                        <label htmlFor={`description[${questionIndex}]`}>
+                          Description
+                        </label>
+                        <Field
+                          type="text"
+                          id={`description[${questionIndex}]`}
+                          name={`questions[${questionIndex}].description`}
+                          placeholder="Description"
+                          as="textarea"
+                        />
+
+                        <label htmlFor={`weightage[${questionIndex}]`}>
+                          Weightage
+                        </label>
+                        <Field
+                          type="number"
+                          id={`weightage[${questionIndex}]`}
+                          name={`questions[${questionIndex}].weightage`}
+                          placeholder="Weightage"
+                        />
+
+                        <label htmlFor={`negativeMark[${questionIndex}]`}>
+                          Negative Mark
+                        </label>
+                        <Field
+                          type="number"
+                          id={`negativeMark[${questionIndex}]`}
+                          name={`questions[${questionIndex}].negativeMark`}
+                          placeholder="Negative Mark"
+                        />
+
+                        <label htmlFor={`imageUrl[${questionIndex}]`}>
+                          Image URL
+                        </label>
+                        <Field
+                          type="text"
+                          id={`imageUrl[${questionIndex}]`}
+                          name={`questions[${questionIndex}].imageUrl`}
+                          placeholder="Image URL"
+                        />
+
+                        <label
+                          htmlFor={`noOfOptionsDisplayed[${questionIndex}]`}
+                        >
+                          Number of Options Displayed
+                        </label>
+                        <Field
+                          type="number"
+                          id={`noOfOptionsDisplayed[${questionIndex}]`}
+                          name={`questions[${questionIndex}].noOfOptionsDisplayed`}
+                          placeholder="Number of Options Displayed"
+                        />
+
+                        <label htmlFor={`shuffleOptions[${questionIndex}]`}>
+                          Shuffle Options
+                        </label>
+                        <Field
+                          id={`shuffleOptions[${questionIndex}]`}
+                          name={`questions[${questionIndex}].shuffleOptions`}
+                          type="checkbox"
+                        />
+
+                        <label htmlFor={`correctOptionId[${questionIndex}]`}>
+                          Correct Option Id
+                        </label>
+                        <Field
+                          type="text"
+                          id={`correctOptionId[${questionIndex}]`}
+                          name={`questions[${questionIndex}].correctOptionId`}
+                          placeholder="Correct Option Id"
+                        />
+
+                        <h3>Options</h3>
+
+                        <FieldArray
+                          name={`questions[${questionIndex}].options`}
+                          render={(optionsArrayHelpers) => (
+                            <div>
+                              {values.questions[questionIndex].options.map(
+                                (option, optionIndex) => (
+                                  <fieldset
+                                    key={`question_${questionIndex}_${optionIndex}`}
+                                  >
+                                    <legend>Option</legend>
+
+                                    <label
+                                      htmlFor={`id[${questionIndex}]_[${optionIndex}]`}
+                                    >
+                                      Id
+                                    </label>
+                                    <Field
+                                      type="text"
+                                      id={`id[${questionIndex}]_[${optionIndex}]`}
+                                      name={`questions[${questionIndex}].options[${optionIndex}].id`}
+                                      placeholder="Id"
+                                    />
+
+                                    <label
+                                      htmlFor={`description[${questionIndex}]_[${optionIndex}]`}
+                                    >
+                                      Description
+                                    </label>
+                                    <Field
+                                      type="text"
+                                      id={`description[${questionIndex}]_[${optionIndex}]`}
+                                      name={`questions[${questionIndex}].options[${optionIndex}].description`}
+                                      placeholder="Description"
+                                      as="textarea"
+                                    />
+
+                                    <label
+                                      htmlFor={`imageUrl[${questionIndex}]_[${optionIndex}]`}
+                                    >
+                                      Image URL
+                                    </label>
+                                    <Field
+                                      type="text"
+                                      id={`imageUrl[${questionIndex}]_[${optionIndex}]`}
+                                      name={`questions[${questionIndex}].options[${optionIndex}].imageUrl`}
+                                      placeholder="Image URL"
+                                    />
+
+                                    <button
+                                      type="button"
+                                      onClick={() =>
+                                        optionsArrayHelpers.remove(optionIndex)
+                                      }
+                                    >
+                                      Remove Question
+                                    </button>
+                                  </fieldset>
+                                )
+                              )}
+                              <button
+                                type="button"
+                                onClick={() =>
+                                  optionsArrayHelpers.push({
+                                    id: "",
+                                    description: "",
+                                    imageUrl: "",
+                                  })
+                                }
+                              >
+                                Add a Option
+                              </button>
+                            </div>
+                          )}
+                        />
+
+                        <button
+                          type="button"
+                          onClick={() =>
+                            questionsArrayHelpers.remove(questionIndex)
+                          }
+                        >
+                          Remove Question
+                        </button>
+                      </fieldset>
+                    ))}
+                    <button
+                      type="button"
+                      onClick={() =>
+                        questionsArrayHelpers.push({
+                          id: "",
+                          description: "",
+                          weightage: 1,
+                          negativeMark: 0,
+                          imageUrl: "",
+                          noOfOptionsDisplayed: 2,
+                          shuffleOptions: false,
+                          correctOptionId: "",
+                          options: [],
+                        })
+                      }
+                    >
+                      Add a Question
+                    </button>
+                  </div>
+                )}
+              />
 
               <button type="submit">Submit</button>
-              {/* <pre>{JSON.stringify(values, null, 2)}</pre> */}
+              <pre>{JSON.stringify(values, null, 2)}</pre>
             </Form>
           </fieldset>
         )}
