@@ -5,7 +5,7 @@ import axios from "axios";
 
 import { EDIT_QUIZ_URL, GET_QUIZ_URL } from "../constants/api";
 import authConfig from "../util/authConfig";
-import MainForm from "../components/QuizForm/MainForm";
+import QuizForm from "../components/QuizForm";
 
 export default function Edit() {
   const navigate = useNavigate();
@@ -38,7 +38,9 @@ export default function Edit() {
       <div>{isLoading ? <h2>Loading...</h2> : null}</div>
       <div>{isError ? <h2>Not found</h2> : null}</div>
 
-      {JSON.stringify(data) === "{}" ? null : <MainForm data={data} />}
+      {JSON.stringify(data) === "{}" ? null : (
+        <QuizForm data={data} onSubmit={console.log} />
+      )}
     </main>
   );
 }
