@@ -66,11 +66,11 @@ export default function Home() {
 
               <td>
                 {quiz.published ? (
+                  <button>Report</button>
+                ) : (
                   <a href={`/edit/${quiz.id}`}>
                     <button>Edit</button>
                   </a>
-                ) : (
-                  <button>Report</button>
                 )}
               </td>
             </tr>
