@@ -39,7 +39,28 @@ export default function Edit() {
       <div>{isError ? <h2>Not found</h2> : null}</div>
 
       {JSON.stringify(data) === "{}" ? null : (
-        <QuizForm data={data} onSubmit={console.log} />
+        <QuizForm
+          data={data}
+          onSubmit={(data) => {
+            const quizData = (({
+              title,
+              description,
+              tags,
+              shuffleQuestions,
+              duration,
+              published,
+              questions,
+            }) => ({
+              title,
+              description,
+              tags,
+              shuffleQuestions,
+              duration,
+              published,
+              questions,
+            }))(data);
+          }}
+        />
       )}
     </main>
   );

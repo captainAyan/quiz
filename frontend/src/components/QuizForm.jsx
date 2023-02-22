@@ -1,11 +1,13 @@
-import { useEffect, useState } from "react";
-import { Formik, Field, Form, FieldArray } from "formik";
+import { Formik, Field, Form, FieldArray, ErrorMessage } from "formik";
+
+import QuizSchema from "../util/quizValidationSchema";
 
 export default function MainForm({ data, onSubmit }) {
   return (
     <>
       <Formik
         initialValues={data}
+        validationSchema={QuizSchema}
         onSubmit={async (values) => onSubmit(values)}
       >
         {({ values, setFieldValue }) => (
@@ -15,6 +17,7 @@ export default function MainForm({ data, onSubmit }) {
               <legend>Details</legend>
               <label htmlFor="title">Title</label>
               <Field type="text" id="title" name="title" placeholder="Title" />
+              <ErrorMessage name="title" />
 
               <label htmlFor="description">Description</label>
               <Field
@@ -24,6 +27,8 @@ export default function MainForm({ data, onSubmit }) {
                 placeholder="Description"
                 as="textarea"
               />
+
+              <ErrorMessage name="description" />
 
               <label htmlFor="duration">Duration</label>
               <Field
@@ -45,9 +50,12 @@ export default function MainForm({ data, onSubmit }) {
                 })()}{" "}
                 (mm:ss)
               </span>
+              <br />
+              <ErrorMessage name="duration" />
 
               <label htmlFor="published">Published</label>
               <Field id="published" name="published" type="checkbox" />
+              <ErrorMessage name="published" />
 
               <label htmlFor="shuffleQuestions">Shuffle Questions</label>
               <Field
@@ -55,6 +63,7 @@ export default function MainForm({ data, onSubmit }) {
                 name="shuffleQuestions"
                 type="checkbox"
               />
+              <ErrorMessage name="shuffleQuestions" />
 
               <label htmlFor="tags">Tags</label>
               <input
@@ -88,6 +97,7 @@ export default function MainForm({ data, onSubmit }) {
                   </span>
                 ))}
               </div>
+              <ErrorMessage name="tags" />
             </fieldset>
 
             <h3>Questions</h3>
@@ -106,6 +116,7 @@ export default function MainForm({ data, onSubmit }) {
                         name={`questions[${questionIndex}].id`}
                         placeholder="Id"
                       />
+                      <ErrorMessage name={`questions[${questionIndex}].id`} />
 
                       <label htmlFor={`description[${questionIndex}]`}>
                         Description
@@ -117,6 +128,9 @@ export default function MainForm({ data, onSubmit }) {
                         placeholder="Description"
                         as="textarea"
                       />
+                      <ErrorMessage
+                        name={`questions[${questionIndex}].description`}
+                      />
 
                       <label htmlFor={`weightage[${questionIndex}]`}>
                         Weightage
@@ -126,6 +140,9 @@ export default function MainForm({ data, onSubmit }) {
                         id={`weightage[${questionIndex}]`}
                         name={`questions[${questionIndex}].weightage`}
                         placeholder="Weightage"
+                      />
+                      <ErrorMessage
+                        name={`questions[${questionIndex}].weightage`}
                       />
 
                       <label htmlFor={`negativeMark[${questionIndex}]`}>
@@ -137,6 +154,9 @@ export default function MainForm({ data, onSubmit }) {
                         name={`questions[${questionIndex}].negativeMark`}
                         placeholder="Negative Mark"
                       />
+                      <ErrorMessage
+                        name={`questions[${questionIndex}].negativeMark`}
+                      />
 
                       <label htmlFor={`imageUrl[${questionIndex}]`}>
                         Image URL
@@ -146,6 +166,9 @@ export default function MainForm({ data, onSubmit }) {
                         id={`imageUrl[${questionIndex}]`}
                         name={`questions[${questionIndex}].imageUrl`}
                         placeholder="Image URL"
+                      />
+                      <ErrorMessage
+                        name={`questions[${questionIndex}].imageUrl`}
                       />
 
                       <label htmlFor={`noOfOptionsDisplayed[${questionIndex}]`}>
@@ -157,6 +180,9 @@ export default function MainForm({ data, onSubmit }) {
                         name={`questions[${questionIndex}].noOfOptionsDisplayed`}
                         placeholder="Number of Options Displayed"
                       />
+                      <ErrorMessage
+                        name={`questions[${questionIndex}].noOfOptionsDisplayed`}
+                      />
 
                       <label htmlFor={`shuffleOptions[${questionIndex}]`}>
                         Shuffle Options
@@ -165,6 +191,9 @@ export default function MainForm({ data, onSubmit }) {
                         id={`shuffleOptions[${questionIndex}]`}
                         name={`questions[${questionIndex}].shuffleOptions`}
                         type="checkbox"
+                      />
+                      <ErrorMessage
+                        name={`questions[${questionIndex}].shuffleOptions`}
                       />
 
                       <label htmlFor={`correctOptionId[${questionIndex}]`}>
@@ -175,6 +204,9 @@ export default function MainForm({ data, onSubmit }) {
                         id={`correctOptionId[${questionIndex}]`}
                         name={`questions[${questionIndex}].correctOptionId`}
                         placeholder="Correct Option Id"
+                      />
+                      <ErrorMessage
+                        name={`questions[${questionIndex}].correctOptionId`}
                       />
 
                       <h3>Options</h3>
@@ -201,6 +233,9 @@ export default function MainForm({ data, onSubmit }) {
                                     name={`questions[${questionIndex}].options[${optionIndex}].id`}
                                     placeholder="Id"
                                   />
+                                  <ErrorMessage
+                                    name={`questions[${questionIndex}].options[${optionIndex}.id`}
+                                  />
 
                                   <label
                                     htmlFor={`description[${questionIndex}]_[${optionIndex}]`}
@@ -214,6 +249,9 @@ export default function MainForm({ data, onSubmit }) {
                                     placeholder="Description"
                                     as="textarea"
                                   />
+                                  <ErrorMessage
+                                    name={`questions[${questionIndex}].options[${optionIndex}.description`}
+                                  />
 
                                   <label
                                     htmlFor={`imageUrl[${questionIndex}]_[${optionIndex}]`}
@@ -225,6 +263,9 @@ export default function MainForm({ data, onSubmit }) {
                                     id={`imageUrl[${questionIndex}]_[${optionIndex}]`}
                                     name={`questions[${questionIndex}].options[${optionIndex}].imageUrl`}
                                     placeholder="Image URL"
+                                  />
+                                  <ErrorMessage
+                                    name={`questions[${questionIndex}].options[${optionIndex}.imageUrl`}
                                   />
 
                                   <button
@@ -288,10 +329,10 @@ export default function MainForm({ data, onSubmit }) {
               )}
             />
 
-            <button type="submit" style={{ marginTop: "12px" }}>
+            <button type="submit" style={{ margin: "12px 0px" }}>
               Submit
             </button>
-            <pre>{JSON.stringify(values, null, 2)}</pre>
+            {/* <pre>{JSON.stringify(values, null, 2)}</pre> */}
           </Form>
         )}
       </Formik>

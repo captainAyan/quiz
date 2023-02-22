@@ -1,0 +1,12 @@
+export const QUIZ_TITLE_MAX_LENGTH = 100;
+export const QUIZ_DESCRIPTION_MAX_LENGTH = 400;
+export const QUIZ_MAX_TAG_LENGTH = 20;
+export const QUIZ_MAX_TAGS = 10;
+
+export const QUESTION_ID_MAX_LENGTH = 6;
+export const QUESTION_DESCRIPTION_MAX_LENGTH = 1000;
+
+export const OPTION_ID_MAX_LENGTH = 6;
+export const OPTION_DESCRIPTION_MAX_LENGTH = 400;
+
+export const IMAGE_URL_MAX_LENGTH = 400;
