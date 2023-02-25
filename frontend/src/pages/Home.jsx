@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 
 import authConfig from "../util/authConfig";
-import { GET_QUIZZES_URL } from "../constants/api";
+import { GET_QUIZZES_URL, DELETE_QUIZ_URL } from "../constants/api";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -38,12 +38,29 @@ export default function Home() {
     }
   }, [user, navigate, page]);
 
+  async function deleteQuiz(quizId) {
+    if (confirm("Once deleted, the quiz cannot be recovered")) {
+      try {
+        const { data } = await axios.delete(
+          `${DELETE_QUIZ_URL}/${quizId}`,
+          authConfig(user.token)
+        );
+        setQuizzes(quizzes.filter((quiz) => quiz.id != quizId));
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  }
+
   return (
     <main>
       <h1>
         Welcome,{" "}
         <span style={{ textTransform: "capitalize" }}>{user?.firstName}</span>
       </h1>
+      <a href={`/create`}>
+        <button>Create</button>
+      </a>
       <div>{isLoading ? <h4>Loading...</h4> : null}</div>
       <table>
         <thead>
@@ -66,11 +83,14 @@ export default function Home() {
 
               <td>
                 {quiz.published ? (
-                  <button>Report</button>
+                  <a>Report</a>
                 ) : (
-                  <a href={`/edit/${quiz.id}`}>
-                    <button>Edit</button>
-                  </a>
+                  <>
+                    <a href={`/edit/${quiz.id}`}>Edit</a>{" "}
+                    <a onClick={async () => deleteQuiz(quiz.id)} href="#">
+                      Delete
+                    </a>
+                  </>
                 )}
               </td>
             </tr>

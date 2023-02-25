@@ -11,6 +11,7 @@ import Register from "./pages/Register";
 
 import Header from "./components/Header";
 import Edit from "./pages/Edit";
+import Create from "./pages/Create";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="register" element={<Register />} />
           <Route path="login" element={<Login />} />
 
+          <Route path="create/" element={<Create />} />
           <Route path="edit/:id" element={<Edit />} />
 
           <Route path="*" element={<Navigate to="/" />} />

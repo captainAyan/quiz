@@ -13,7 +13,9 @@ export default function Edit() {
   const { id } = useParams();
 
   const [isLoading, setIsLoading] = useState(true);
-  const [isError, setIsError] = useState(false);
+  const [isNotFoundError, setIsNotFoundError] = useState(false);
+  const [formErrorMessage, setFormErrorMessage] = useState("");
+  const [formSuccessMessage, setFormSuccessMessage] = useState("");
   const [data, setData] = useState({});
 
   useEffect(() => {
@@ -22,25 +24,23 @@ export default function Edit() {
     } else {
       axios
         .get(GET_QUIZ_URL + id, authConfig(user?.token))
-        .then(({ data }) => setData(data))
-        .catch((e) => setIsError(true))
+        .then(({ data }) => {
+          setData(data);
+        })
+        .catch((e) => setIsNotFoundError(true))
         .finally(() => setIsLoading(false));
     }
   }, [user, navigate, id]);
 
-  useEffect(() => {
-    console.log("data changed", data);
-  }, [data]);
-
   return (
     <main>
       <h1>Edit</h1>
-      <div>{isLoading ? <h2>Loading...</h2> : null}</div>
-      <div>{isError ? <h2>Not found</h2> : null}</div>
 
       {JSON.stringify(data) === "{}" ? null : (
         <QuizForm
           data={data}
+          errorMessage={formErrorMessage}
+          successMessage={formSuccessMessage}
           onSubmit={(data) => {
             const quizData = (({
               title,
@@ -59,9 +59,27 @@ export default function Edit() {
               published,
               questions,
             }))(data);
+
+            axios
+              .put(EDIT_QUIZ_URL + id, quizData, authConfig(user?.token))
+              .then(({ data }) => {
+                setFormSuccessMessage("Saved Successfully");
+                setFormErrorMessage("");
+                setData(data);
+              })
+              .catch((e) => {
+                setFormSuccessMessage("");
+                setFormErrorMessage(e.response.data.error.message);
+              })
+              .finally(() => setIsLoading(false));
           }}
         />
       )}
+
+      <div>{isLoading ? <p>Loading...</p> : null}</div>
+      <div>
+        {isNotFoundError ? <p style={{ color: "red" }}>Not found</p> : null}
+      </div>
     </main>
   );
 }

@@ -2,7 +2,12 @@ import { Formik, Field, Form, FieldArray, ErrorMessage } from "formik";
 
 import QuizSchema from "../util/quizValidationSchema";
 
-export default function MainForm({ data, onSubmit }) {
+export default function MainForm({
+  data,
+  onSubmit,
+  errorMessage,
+  successMessage,
+}) {
   return (
     <>
       <Formik
@@ -308,7 +313,7 @@ export default function MainForm({ data, onSubmit }) {
                   ))}
                   <button
                     type="button"
-                    style={{ marginTop: "12px" }}
+                    style={{ margin: "12px 0px" }}
                     onClick={() =>
                       questionsArrayHelpers.push({
                         id: "",
@@ -329,10 +334,16 @@ export default function MainForm({ data, onSubmit }) {
               )}
             />
 
-            <button type="submit" style={{ margin: "12px 0px" }}>
+            <span style={{ color: "red", display: "block" }}>
+              {errorMessage}
+            </span>
+            <span style={{ color: "green", display: "block" }}>
+              {successMessage}
+            </span>
+
+            <button type="submit" style={{ margin: "8px 0px" }}>
               Submit
             </button>
-            {/* <pre>{JSON.stringify(values, null, 2)}</pre> */}
           </Form>
         )}
       </Formik>
