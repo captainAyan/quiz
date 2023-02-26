@@ -46,7 +46,7 @@ export default Yup.object().shape({
           "Negative mark cannot be higher than weightage",
           (negativeMark, { parent: { weightage } }) => weightage > negativeMark
         ),
-      imageUrl: Yup.string().min(0).max(IMAGE_URL_MAX_LENGTH).required(),
+      imageUrl: Yup.string().min(0).max(IMAGE_URL_MAX_LENGTH),
       noOfOptionsDisplayed: Yup.number()
         .integer()
         .min(2)
@@ -77,7 +77,7 @@ export default Yup.object().shape({
             .min(1)
             .max(OPTION_DESCRIPTION_MAX_LENGTH)
             .required(),
-          imageUrl: Yup.string().min(0).max(IMAGE_URL_MAX_LENGTH).required(),
+          imageUrl: Yup.string().min(0).max(IMAGE_URL_MAX_LENGTH),
         })
       ),
     })

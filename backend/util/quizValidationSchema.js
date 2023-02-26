@@ -47,8 +47,8 @@ const schema = Joi.object({
             return Number(parseFloat(value).toFixed(2));
           }),
         imageUrl: Joi.string()
+          .allow("")
           .uri()
-          .min(0)
           .max(IMAGE_URL_MAX_LENGTH)
           .required(),
         noOfOptionsDisplayed: Joi.number()
@@ -87,8 +87,8 @@ const schema = Joi.object({
                 .max(OPTION_DESCRIPTION_MAX_LENGTH)
                 .required(),
               imageUrl: Joi.string()
+                .allow("")
                 .uri()
-                .min(0)
                 .max(IMAGE_URL_MAX_LENGTH)
                 .required(),
             })
