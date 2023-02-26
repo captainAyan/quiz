@@ -16,3 +16,6 @@ export const GET_QUIZ_URL = `${BASE_QUIZ_URL}/`;
 export const GET_QUIZZES_URL = `${BASE_QUIZ_URL}/`;
 export const EDIT_QUIZ_URL = `${BASE_QUIZ_URL}/`;
 export const DELETE_QUIZ_URL = `${BASE_QUIZ_URL}/`;
+export const GET_QUIZ_QUESTIONS_URL = (id) =>
+  `${BASE_QUIZ_URL}/${id}/questions`;
+export const POST_QUIZ_ANSWERS_URL = (id) => `${BASE_QUIZ_URL}/${id}/answers`;

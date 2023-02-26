@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 
 import authConfig from "../util/authConfig";
-import { GET_QUIZZES_URL, DELETE_QUIZ_URL } from "../constants/api";
+import { GET_QUIZZES_URL, DELETE_QUIZ_URL, DOMAIN } from "../constants/api";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -83,7 +83,19 @@ export default function Home() {
 
               <td>
                 {quiz.published ? (
-                  <a>Report</a>
+                  <>
+                    <a
+                      onClick={() => {
+                        navigator.clipboard.writeText(
+                          `${DOMAIN}/quiz/${quiz.id}`
+                        );
+                      }}
+                      href="#"
+                    >
+                      Link
+                    </a>{" "}
+                    <a>Report</a>
+                  </>
                 ) : (
                   <>
                     <a href={`/edit/${quiz.id}`}>Edit</a>{" "}

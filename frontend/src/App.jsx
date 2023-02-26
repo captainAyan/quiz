@@ -12,6 +12,7 @@ import Register from "./pages/Register";
 import Header from "./components/Header";
 import Edit from "./pages/Edit";
 import Create from "./pages/Create";
+import Quiz from "./pages/Quiz";
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
 
           <Route path="create/" element={<Create />} />
           <Route path="edit/:id" element={<Edit />} />
+
+          <Route path="quiz/:id" element={<Quiz />} />
 
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
