@@ -85,7 +85,6 @@ const quizSchema = new mongoose.Schema(
         },
         imageUrl: {
           type: String,
-          required: true,
           trim: true,
           minlength: 0,
           maxlength: IMAGE_URL_MAX_LENGTH,
@@ -125,7 +124,6 @@ const quizSchema = new mongoose.Schema(
             },
             imageUrl: {
               type: String,
-              required: true,
               trim: true,
               minlength: 0,
               maxlength: IMAGE_URL_MAX_LENGTH,
