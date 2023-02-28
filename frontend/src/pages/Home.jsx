@@ -12,7 +12,6 @@ export default function Home() {
 
   const [isLoading, setIsLoading] = useState(false);
   const [quizzes, setQuizzes] = useState();
-  const [totalPages, setTotalPages] = useState(0);
 
   const [searchParams] = useSearchParams();
   const [page, setPage] = useState(parseInt(searchParams.get("page")) || 0);
@@ -25,7 +24,6 @@ export default function Home() {
     );
     const { total, limit } = data;
     setQuizzes(data.quizzes);
-    setTotalPages(Math.ceil(total / limit));
     setIsLoading(false);
   }
 
@@ -75,7 +73,7 @@ export default function Home() {
         <tbody>
           {quizzes?.map((quiz) => (
             <tr key={quiz.id}>
-              <td>{quiz.id.substr(quiz.id.length - 6)}</td>
+              <td>{quiz.id}</td>
               <td>{quiz.title}</td>
               <td>{quiz.description}</td>
               <td>{quiz.published ? "Published" : "Unpublished"}</td>
@@ -94,7 +92,7 @@ export default function Home() {
                     >
                       Link
                     </a>{" "}
-                    <a>Report</a>
+                    <a href={`/report/${quiz.id}?page=0`}>Report</a>
                   </>
                 ) : (
                   <>

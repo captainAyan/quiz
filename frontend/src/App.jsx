@@ -13,6 +13,7 @@ import Header from "./components/Header";
 import Edit from "./pages/Edit";
 import Create from "./pages/Create";
 import Quiz from "./pages/Quiz";
+import Report from "./pages/Report";
 
 function App() {
   return (
@@ -30,6 +31,8 @@ function App() {
           <Route path="edit/:id" element={<Edit />} />
 
           <Route path="quiz/:id" element={<Quiz />} />
+
+          <Route path="report/:id" element={<Report />} />
 
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
