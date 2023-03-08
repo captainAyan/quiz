@@ -45,4 +45,11 @@ const answerSchema = new mongoose.Schema(
 answerSchema.set("toObject", { virtuals: true });
 answerSchema.set("toJSON", { virtuals: true });
 
+answerSchema.virtual("user", {
+  ref: "User",
+  localField: "userId",
+  foreignField: "_id",
+  justOne: true,
+});
+
 module.exports = mongoose.model("Answer", answerSchema);

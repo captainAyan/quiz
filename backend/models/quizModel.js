@@ -143,4 +143,11 @@ quizSchema.virtual("fullMarks").get(function () {
   return this.questions.reduce((acc, q) => acc + q.weightage, 0);
 });
 
+quizSchema.virtual("user", {
+  ref: "User",
+  localField: "userId",
+  foreignField: "_id",
+  justOne: true,
+});
+
 module.exports = mongoose.model("Quiz", quizSchema);

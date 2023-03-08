@@ -251,18 +251,13 @@ const getQuizAnswers = asyncHandler(async (req, res, next) => {
   const answers = await Answer.find({ quizId })
     .skip(PAGE * PAGINATION_LIMIT)
     .limit(PAGINATION_LIMIT)
-    .populate("userId", "-password");
+    .populate("user", "-password");
 
   const response = {
     skip: PAGE * PAGINATION_LIMIT,
     limit: PAGINATION_LIMIT,
     total: await Answer.find({ quizId }).count(),
-    answers: answers.map((answer) => {
-      answer = answer.toJSON();
-      answer.user = answer.userId;
-      delete answer.userId;
-      return answer;
-    }),
+    answers,
   };
 
   res.status(StatusCodes.OK).json(response);
