@@ -51,5 +51,11 @@ answerSchema.virtual("user", {
   foreignField: "_id",
   justOne: true,
 });
+answerSchema.virtual("quiz", {
+  ref: "Quiz",
+  localField: "quizId",
+  foreignField: "_id",
+  justOne: true,
+});
 
 module.exports = mongoose.model("Answer", answerSchema);

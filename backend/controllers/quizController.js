@@ -263,6 +263,39 @@ const getQuizAnswers = asyncHandler(async (req, res, next) => {
   res.status(StatusCodes.OK).json(response);
 });
 
+const getMarkSheets = asyncHandler(async (req, res, next) => {
+  const PAGE =
+    parseInt(req.query.page, 10) > 0 ? parseInt(req.query.page, 10) : 0;
+
+  const markSheets = await Answer.find({ userId: req.user.id })
+    .skip(PAGE * PAGINATION_LIMIT)
+    .limit(PAGINATION_LIMIT)
+    .populate("quiz", [
+      "id",
+      "title",
+      "description",
+      "userId",
+      "tags",
+      "duration",
+      "createdAt",
+      "updatedAt",
+      "questions",
+    ]);
+
+  const response = {
+    skip: PAGE * PAGINATION_LIMIT,
+    limit: PAGINATION_LIMIT,
+    total: await Answer.find({ userId: req.user.id }).count(),
+    markSheets: markSheets.map((markSheet) => {
+      markSheet = markSheet.toJSON();
+      delete markSheet.quiz.questions;
+      return markSheet;
+    }),
+  };
+
+  res.status(StatusCodes.OK).json(response);
+});
+
 module.exports = {
   createQuiz,
   getQuizzes,
@@ -272,4 +305,5 @@ module.exports = {
   getQuizQuestions,
   postQuizAnswers,
   getQuizAnswers,
+  getMarkSheets,
 };
