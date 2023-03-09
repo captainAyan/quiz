@@ -140,8 +140,6 @@ quizSchema.set("toObject", { virtuals: true });
 quizSchema.set("toJSON", { virtuals: true });
 
 quizSchema.virtual("fullMarks").get(function () {
-  console.log(this.title);
-  console.log(this.questions);
   return this.questions.reduce((acc, q) => acc + q.weightage, 0);
 });
 
