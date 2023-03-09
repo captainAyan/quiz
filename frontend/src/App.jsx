@@ -14,6 +14,7 @@ import Edit from "./pages/Edit";
 import Create from "./pages/Create";
 import Quiz from "./pages/Quiz";
 import Report from "./pages/Report";
+import MarkSheets from "./pages/MarkSheets";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path="quiz/:id" element={<Quiz />} />
 
           <Route path="report/:id" element={<Report />} />
+          <Route path="marksheets/" element={<MarkSheets />} />
 
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>

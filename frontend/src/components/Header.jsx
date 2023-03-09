@@ -11,6 +11,7 @@ export default function Header() {
       {user ? (
         <>
           <Link to="/">[Home]</Link>
+          <Link to="/marksheets">[Marksheets]</Link>
           <a
             href="#"
             onClick={() => {
