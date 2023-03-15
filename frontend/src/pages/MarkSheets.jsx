@@ -39,9 +39,6 @@ export default function MarkSheet() {
   return (
     <main>
       <h1>Marksheets</h1>
-      <a href={`/create`}>
-        <button>Create</button>
-      </a>
       <div>{isLoading ? <h4>Loading...</h4> : null}</div>
       <table>
         <thead>
