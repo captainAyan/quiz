@@ -298,7 +298,7 @@ export default function MainForm({
                                         optionsArrayHelpers.remove(optionIndex)
                                       }
                                     >
-                                      Remove Question
+                                      Remove this Option
                                     </button>
                                   </fieldset>
                                 )
@@ -313,7 +313,7 @@ export default function MainForm({
                                   })
                                 }
                               >
-                                Add a Option
+                                Add an Option
                               </button>
                             </div>
                           )}
@@ -328,7 +328,7 @@ export default function MainForm({
                             );
                           }}
                         >
-                          Remove Question
+                          Remove this Question
                         </button>
                       </fieldset>
                     </div>
