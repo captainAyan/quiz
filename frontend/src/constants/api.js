@@ -1,7 +1,7 @@
 export const DOMAIN =
   !process.env.NODE_ENV || process.env.NODE_ENV === "development"
     ? "http://localhost:3001"
-    : "";
+    : "https://quiz-1zft.onrender.com";
 
 export const VERSION = "v1";
 export const BASE_URL = `${DOMAIN}/api/${VERSION}`;
