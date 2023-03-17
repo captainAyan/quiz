@@ -39,7 +39,7 @@ export default Yup.object().shape({
       weightage: Yup.number().integer().positive().min(1).required(),
 
       negativeMark: Yup.number()
-        .positive()
+        .min(0)
         .required()
         .test(
           "negative-mark-higher-than-weightage",

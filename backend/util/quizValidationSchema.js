@@ -34,7 +34,7 @@ const schema = Joi.object({
           .required(),
         weightage: Joi.number().integer().positive().min(1).required(),
         negativeMark: Joi.number()
-          .positive()
+          .min(0)
           .required()
           .custom((value, helpers) => {
             const { weightage } = helpers.state.ancestors[0]; // question options
