@@ -16,6 +16,7 @@ import Create from "./pages/Create";
 import Quiz from "./pages/Quiz";
 import Report from "./pages/Report";
 import MarkSheets from "./pages/MarkSheets";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
@@ -36,6 +37,8 @@ function App() {
 
           <Route path="report/:id" element={<Report />} />
           <Route path="marksheets/" element={<MarkSheets />} />
+
+          <Route path="profile/" element={<Profile />} />
 
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>

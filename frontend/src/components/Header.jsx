@@ -12,6 +12,7 @@ export default function Header() {
         <>
           <Link to="/">[Home]</Link>
           <Link to="/marksheets">[Marksheets]</Link>
+          <Link to="/profile">[Profile]</Link>
           <a
             href="#"
             onClick={() => {
