@@ -1,1 +1,9 @@
-@import 'bamboo.css'
+body {
+  max-width: 100ch;
+}
+
+table {
+  width: 100%;
+  word-wrap:break-word;
+  table-layout: fixed;
+}
