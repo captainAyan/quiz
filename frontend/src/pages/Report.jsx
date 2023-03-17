@@ -77,9 +77,11 @@ export default function Report() {
               <td>{answer.user.id}</td>
               <td>{answer.user.email}</td>
               <td>
+                [
                 <a href="#" onClick={() => setDetailViewId(answer.id)}>
                   View
                 </a>
+                ]
               </td>
             </tr>
           ))}

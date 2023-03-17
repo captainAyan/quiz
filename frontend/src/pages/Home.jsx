@@ -82,6 +82,7 @@ export default function Home() {
               <td>
                 {quiz.published ? (
                   <>
+                    [
                     <a
                       onClick={() => {
                         navigator.clipboard.writeText(
@@ -91,15 +92,16 @@ export default function Home() {
                       href="#"
                     >
                       Link
-                    </a>{" "}
-                    <a href={`/report/${quiz.id}?page=0`}>Report</a>
+                    </a>
+                    ] [<a href={`/report/${quiz.id}?page=0`}>Report</a>]
                   </>
                 ) : (
                   <>
-                    <a href={`/edit/${quiz.id}`}>Edit</a>{" "}
+                    [<a href={`/edit/${quiz.id}`}>Edit</a>] [
                     <a onClick={async () => deleteQuiz(quiz.id)} href="#">
                       Delete
                     </a>
+                    ]
                   </>
                 )}
               </td>
