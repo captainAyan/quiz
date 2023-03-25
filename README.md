@@ -9,6 +9,8 @@
 
 🎉🎉 Here's a quiz for you to test out [Indian and International Politics Quiz](https://quiz-1zft.onrender.com/quiz/63fe632b919139dcc5a09a45). ⚠️You'd have to login first.
 
+🔬🎓 Here's a video tutorial [Link](https://youtu.be/s8QYnxlmc84).
+
 ## Getting Started
 - Clone the repo
 - Run `npm i && npm i --prefix frontend` (Installation of dependencies)
