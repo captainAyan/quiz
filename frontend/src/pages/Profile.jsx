@@ -26,19 +26,19 @@ export default function Profile() {
           </tr>
           <tr>
             <td>
-              <b>Firstname</b>
+              <b>First Name</b>
             </td>
             <td>{user?.firstName}</td>
           </tr>
           <tr>
             <td>
-              <b>Lastname</b>
+              <b>Last Name</b>
             </td>
             <td>{user?.lastName}</td>
           </tr>
           <tr>
             <td>
-              <b>email</b>
+              <b>Email</b>
             </td>
             <td>{user?.email}</td>
           </tr>
