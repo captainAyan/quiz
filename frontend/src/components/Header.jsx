@@ -10,9 +10,8 @@ export default function Header() {
     <nav>
       {user ? (
         <>
-          <Link to="/">[Home]</Link>
-          <Link to="/marksheets">[Marksheets]</Link>
-          <Link to="/profile">[Profile]</Link>
+          [<Link to="/">Home</Link>] [<Link to="/marksheets">Marksheets</Link>]
+          [<Link to="/profile">Profile</Link>] [
           <a
             href="#"
             onClick={() => {
@@ -20,8 +19,9 @@ export default function Header() {
               dispatch(reset());
             }}
           >
-            [Logout]
+            Logout
           </a>
+          ]
         </>
       ) : null}
     </nav>
