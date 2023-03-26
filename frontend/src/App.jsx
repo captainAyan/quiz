@@ -17,6 +17,7 @@ import Quiz from "./pages/Quiz";
 import Report from "./pages/Report";
 import MarkSheets from "./pages/MarkSheets";
 import Profile from "./pages/Profile";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -43,7 +44,7 @@ function App() {
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
 
-        {/* <Footer /> */}
+        <Footer />
       </BrowserRouter>
     </Provider>
   );
